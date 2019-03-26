@@ -67,14 +67,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\images\en.png" />
+    <Content Include="assets\images\fin.png" />
+    <Content Include="assets\images\graph.jpg" />
+    <Content Include="assets\images\traffic.png" />
+    <Content Include="FrontPage.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ResultPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrontPage.aspx.cs">
+      <DependentUpon>FrontPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontPage.aspx.designer.cs">
+      <DependentUpon>FrontPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultPage.aspx.cs">
+      <DependentUpon>ResultPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultPage.aspx.designer.cs">
+      <DependentUpon>ResultPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
