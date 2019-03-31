@@ -75,7 +75,7 @@
 }
 
 .search-results {
-    display: none;
+    display: block;
     max-width: 399px;
     margin: -10px auto 0;
     padding: 10px 0 .4em;
