@@ -12,11 +12,7 @@ namespace optitraffic.Models
         public string MunicipalityName { get; set; }
         public List<int> StationSensorsCodes { get; }
 
-        public TmsStation() : this(-1, -1, null)
-        {
-
-        }
-
+        public TmsStation() : this(-1, -1, null) { }
         public TmsStation(int id, int mun_code, string mun_name)
         {
             this.Id = id;
