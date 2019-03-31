@@ -1,26 +1,33 @@
 ﻿body {
-    background-size: 100% 100%;
+    background-size: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: -webkit-fill-available;
-}
-
-.header {
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
-    background-color: #534BAE;
-    padding-bottom: 1.0em;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
-.navbar-header {
-    padding-top: 1.0em;
+.navbar-themed {
+    background-color: #534BAE !important;
+    color: #fff !important;
+    font-family: 'ZCOOL QingKe HuangYou', cursive !important;
 }
+
+    .navbar-themed > div {
+        padding-top: 6.5px;
+        padding-bottom: 6.5px;
+    }
+
+    .navbar-themed .navbar-brand {
+        color: #fff !important;
+        font-size: 20pt;
+    }
 
 .logo {
     font-family: 'ZCOOL QingKe HuangYou', cursive;
@@ -51,9 +58,20 @@
     margin: 0
 }
 
-.text_heading {
+.heading {
+    margin-bottom: 2em;
+}
+
+.heading__text {
     color: #534BAE;
-    font-size: 1.8em;
+    font-size: 2.8em;
+}
+
+.search-group {
+    margin: 0 auto;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.37);
 }
 
 .btn-group {
@@ -61,10 +79,6 @@
     box-shadow: 0.1em 0.1em 0.5em grey;
     background-color: white;
     margin-top: 1.0em;
-}
-
-.input_location {
-    border: none;
 }
 
 .search {
@@ -80,6 +94,11 @@ footer {
     text-align: right;
 }
 
+.language-selection {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
 .dropbtn {
     background-color: white;
     color: #534BAE;
@@ -89,46 +108,19 @@ footer {
     cursor: pointer;
 }
 
+    .dropbtn:hover,
+    .dropbtn:focus,
+    .dropbtn:active {
+        box-shadow: none !important; /* Overriding bootstrap's inset box-shadow */
+        color: #534BAE !important; /* Overriding bootstrap's default color change */
+    }
+
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
+.dropup {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        color: black;
-        padding: 0.9em 1.0em;
-        text-decoration: none;
-        display: block;
-    }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: white;
-        }
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: inline-block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: inline-block;
-}
 
 .result {
     text-align: left;

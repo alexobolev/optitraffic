@@ -24,13 +24,19 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header container-fluid">
-            <nav class="navbar-static-top">
-                <div class="navbar-header col-lg-3 col-md-3 col-sm-3">
-                    <a class="logo" href="#">OptiTraffic</a>
+        <header class="navbar navbar-inverse navbar-static-top navbar-themed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="FrontPage.aspx">OptiTraffic</a>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </header>
         <div class="content container result">
             <div class="box container">
                 <div class="left col-sm-12 col-md-8 col-lg-8">

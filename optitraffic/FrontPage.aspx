@@ -24,40 +24,48 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header container-fluid">
-            <nav class="navbar-static-top">
-                <div class="navbar-header col-lg-3 col-md-3 col-sm-3">
-                    <a class="logo" href="#">OptiTraffic</a>
+        <header class="navbar navbar-inverse navbar-static-top navbar-themed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">OptiTraffic</a>
                 </div>
-            </nav>
-        </div>
-        <div class="content parent container">
-            <div class="child">
+            </div>
+        </header>
+        <div class="parent container">
+            <div class="row">
                 <div class="heading">
-                    <span class="text_heading">What's the traffic load in...</span>
+                    <span class="heading__text">What's the traffic load in...</span>
                 </div>
-                <div class="btn-group" role="group">
-                    <div class="input-group-prepend">
-                        <input class="input_location"type="text" placeholder="Search for a location..." name="search" />
-                        <a href="ResultPage.aspx" class="search input-group-text" id="btnGroup"><i class="fa fa-search"></i></a>
-                    </div>
+                <div class="input-group search-group" role="group">
+                    <input type="text" class="form-control" placeholder="Search for a location..." name="search" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                    </span>
                 </div>
             </div>
         </div>
         <footer>
-            <div class="dropdown">
-                <div class="dropdown-content" aria-labelledby="btnGroupDrop1">
-                    <a href="#">Fin</a>
-                    <a href="#">Eng</a>
+            <div class="container language-selection">
+                <div class="dropup">
+                    <button id="langDropdown" class="btn dropdown-toggle dropbtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose language 
+                        <i class="fa fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                        <li><a href="#">Suomi</a></li>
+                        <li><a href="#">English</a></li>
+                    </ul>
                 </div>
-                <button id="btnGroupDrop1" class="dropbtn btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose language <i class="fa fa-globe"></i>
-                </button>
-
             </div>
         </footer>
     </div>
-        <form id="SearchForm" runat="server">
+    <form id="SearchForm" runat="server">
         <div>
         </div>
     </form>
