@@ -13,5 +13,10 @@ namespace optitraffic
         {
 
         }
+
+        protected void LocationName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

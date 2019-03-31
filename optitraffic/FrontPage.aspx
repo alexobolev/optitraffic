@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" runat="server">
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
@@ -38,16 +38,18 @@
             </div>
         </header>
         <div class="parent container">
-            <div class="row">
+            <div class="row" runat="server">
                 <div class="heading">
                     <span class="heading__text">What's the traffic load in...</span>
                 </div>
-                <div class="input-group search-group" role="group">
-                    <input type="text" class="form-control" placeholder="Search for a location..." name="search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                    </span>
-                </div>
+                    <form id="SearchForm" runat="server" autocomplete="off">
+                        <div class="input-group search-group" role="group">
+                            <asp:TextBox id="LocationName" class="form-control" placeholder="Search for a location..." name="search" runat="server" OnTextChanged="LocationName_TextChanged"></asp:TextBox>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
             </div>
         </div>
         <footer>
@@ -65,9 +67,5 @@
             </div>
         </footer>
     </div>
-    <form id="SearchForm" runat="server">
-        <div>
-        </div>
-    </form>
 </body>
 </html>
