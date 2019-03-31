@@ -1,0 +1,220 @@
+[
+				/* ohitukset_60min_kiintea_suunta1 */
+                {
+                    "id": 5054,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_60MIN_KIINTEA_SUUNTA1",
+                    "oldName": "ohitukset_60min_kiintea_suunta1",
+                    "shortName": "kpl/h1",
+                    "sensorValue": 455,
+                    "sensorUnit": "kpl/h",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_60min_kiintea_suunta2 */
+				{
+                    "id": 5055,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_60MIN_KIINTEA_SUUNTA2",
+                    "oldName": "ohitukset_60min_kiintea_suunta2",
+                    "shortName": "kpl/h2",
+                    "sensorValue": 706,
+                    "sensorUnit": "kpl/h",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_60min_kiintea_suunta1 */
+				{
+                    "id": 5056,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_60MIN_KIINTEA_SUUNTA1",
+                    "oldName": "keskinopeus_60min_kiintea_suunta1",
+                    "shortName": "km/h1",
+                    "sensorValue": 115,
+                    "sensorUnit": "km/h",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_60min_kiintea_suunta2 */
+				{
+                    "id": 5057,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_60MIN_KIINTEA_SUUNTA2",
+                    "oldName": "keskinopeus_60min_kiintea_suunta2",
+                    "shortName": "km/h2",
+                    "sensorValue": 110,
+                    "sensorUnit": "km/h",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_5min_kiintea_suunta1_VVAPAAS1 */
+				{
+                    "id": 5058,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_KIINTEA_SUUNTA1_VVAPAAS1",
+                    "oldName": "keskinopeus_5min_kiintea_suunta1_VVAPAAS1",
+                    "shortName": "LTil1",
+                    "sensorValue": 122,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T16:05:00Z",
+                    "timeWindowEnd": "2019-03-31T16:10:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_5min_kiintea_suunta2_VVAPAAS2 */
+				{
+                    "id": 5061,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_KIINTEA_SUUNTA2_VVAPAAS2",
+                    "oldName": "keskinopeus_5min_kiintea_suunta2_VVAPAAS2",
+                    "shortName": "LTil2",
+                    "sensorValue": 104,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T16:05:00Z",
+                    "timeWindowEnd": "2019-03-31T16:10:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_5min_kiintea_suunta1_MS1 */
+				{
+                    "id": 5064,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_KIINTEA_SUUNTA1_MS1",
+                    "oldName": "ohitukset_5min_kiintea_suunta1_MS1",
+                    "shortName": "MTil1",
+                    "sensorValue": 15,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T16:05:00Z",
+                    "timeWindowEnd": "2019-03-31T16:10:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_60min_kiintea_suunta1_MS1 */
+				{
+                    "id": 5067,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1",
+                    "oldName": "ohitukset_60min_kiintea_suunta1_MS1",
+                    "shortName": "MTil1",
+                    "sensorValue": 16,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_5min_kiintea_suunta2_MS2 */
+				{
+                    "id": 5068,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_KIINTEA_SUUNTA2_MS2",
+                    "oldName": "ohitukset_5min_kiintea_suunta2_MS2",
+                    "shortName": "MTil2",
+                    "sensorValue": 20,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T16:05:00Z",
+                    "timeWindowEnd": "2019-03-31T16:10:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_60min_kiintea_suunta2_MS2 */
+				{
+                    "id": 5071,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2",
+                    "oldName": "ohitukset_60min_kiintea_suunta2_MS2",
+                    "shortName": "MTil2",
+                    "sensorValue": 25,
+                    "sensorUnit": "***",
+                    "timeWindowStart": "2019-03-31T15:00:00Z",
+                    "timeWindowEnd": "2019-03-31T16:00:00Z",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* trafficVolume1 */
+				{
+                    "id": 5116,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_LIUKUVA_SUUNTA1",
+                    "oldName": "trafficVolume1",
+                    "shortName": "kpl/h1",
+                    "sensorValue": 384,
+                    "sensorUnit": "kpl/h",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* trafficVolume2 */
+				{
+                    "id": 5119,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_LIUKUVA_SUUNTA2",
+                    "oldName": "trafficVolume2",
+                    "shortName": "kpl/h2",
+                    "sensorValue": 744,
+                    "sensorUnit": "kpl/h",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* averageSpeed1 */
+				{
+                    "id": 5122,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1",
+                    "oldName": "averageSpeed1",
+                    "shortName": "km/h1",
+                    "sensorValue": 115,
+                    "sensorUnit": "km/h",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* averageSpeed2 */
+				{
+                    "id": 5125,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2",
+                    "oldName": "averageSpeed2",
+                    "shortName": "km/h2",
+                    "sensorValue": 110,
+                    "sensorUnit": "km/h",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_5min_liukuva_suunta1_VVAPAAS1 */
+				{
+                    "id": 5158,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1",
+                    "oldName": "keskinopeus_5min_liukuva_suunta1_VVAPAAS1",
+                    "shortName": "LTila1",
+                    "sensorValue": 121,
+                    "sensorUnit": "***",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* keskinopeus_5min_liukuva_suunta2_VVAPAAS2 */
+				{
+                    "id": 5161,
+                    "roadStationId": 23001,
+                    "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2",
+                    "oldName": "keskinopeus_5min_liukuva_suunta2_VVAPAAS2",
+                    "shortName": "LTila2",
+                    "sensorValue": 105,
+                    "sensorUnit": "***",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_5min_liukuva_suunta1_MS1 */
+				{
+                    "id": 5164,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_LIUKUVA_SUUNTA1_MS1",
+                    "oldName": "ohitukset_5min_liukuva_suunta1_MS1",
+                    "shortName": "MTila1",
+                    "sensorValue": 14,
+                    "sensorUnit": "***",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                },
+                /* ohitukset_5min_liukuva_suunta2_MS2 */
+				{
+                    "id": 5168,
+                    "roadStationId": 23001,
+                    "name": "OHITUKSET_5MIN_LIUKUVA_SUUNTA2_MS2",
+                    "oldName": "ohitukset_5min_liukuva_suunta2_MS2",
+                    "shortName": "MTila2",
+                    "sensorValue": 27,
+                    "sensorUnit": "***",
+                    "measuredTime": "2019-03-31T16:13:07Z"
+                }
+]
