@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
+    <script src="assets/SearchDropdown.js"></script>
+
     <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -48,6 +50,14 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                             </span>
+                        </div>
+                        <div class="search-results" id="searchOptions">
+                            <ul>
+                                <li data-val="porvoo">Porvoo</li>
+                                <li data-val="espoo">Espoo</li>
+                                <li data-val="vantaa">Vantaa</li>
+                                <li data-val="helsinki">Helsinki</li>
+                            </ul>
                         </div>
                         <%--<asp:TextBox ID="TextBox1" style="width: 600px;" runat="server" TextMode="MultiLine"></asp:TextBox>--%>
                     </form>

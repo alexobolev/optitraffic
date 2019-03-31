@@ -74,12 +74,43 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.37);
 }
 
-.btn-group {
-    padding: 0.4em;
-    box-shadow: 0.1em 0.1em 0.5em grey;
-    background-color: white;
-    margin-top: 1.0em;
+.search-results {
+    display: none;
+    max-width: 399px;
+    margin: -10px auto 0;
+    padding: 10px 0 .4em;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.37);
 }
+
+    .search-results > ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+        .search-results > ul > li {
+            display: block;
+            list-style: none;
+            padding: .6em 1em;
+            cursor: pointer;
+        }
+
+            .search-results > ul > li:hover {
+                background-color: #eee;
+            }
+
+            .search-results > ul > li:active {
+                font-weight: 600;
+            }
+
+            .btn-group {
+                padding: 0.4em;
+                box-shadow: 0.1em 0.1em 0.5em grey;
+                background-color: white;
+                margin-top: 1.0em;
+            }
 
 .search {
     background-color: white;

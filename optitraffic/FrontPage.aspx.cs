@@ -50,6 +50,8 @@ namespace optitraffic
                 this.TmsStations.Add(tmsStation);
             }
             #endregion
+
+            this.Municipalities.Sort();
         }
 
         protected void LocationName_TextChanged(object sender, EventArgs e)
