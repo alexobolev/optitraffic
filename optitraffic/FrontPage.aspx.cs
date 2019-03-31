@@ -15,6 +15,7 @@ namespace optitraffic
     public partial class FrontPage : System.Web.UI.Page
     {
         protected List<TmsStation> TmsStations = new List<TmsStation>();
+        protected List<string> Municipalities = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace optitraffic
 
             TmsStation tmsStation;
             int id_, munCode_;
+            string munName_;
 
             IEnumerable<JToken> featureObjs = stationsDataObj.SelectTokens("$.features[*]");
             foreach (JToken featureObj in featureObjs)
@@ -36,9 +38,13 @@ namespace optitraffic
                 if (!int.TryParse((string)featureObj.SelectToken("properties.municipalityCode"), out munCode_))
                     munCode_ = -1;
 
+                munName_ = (string)(featureObj.SelectToken("properties.municipality") ?? "");
+
+                if (-1 == this.Municipalities.IndexOf(munName_))
+                    this.Municipalities.Add(munName_);
+
                 tmsStation = new TmsStation(
-                    id_, munCode_,
-                    (string)(featureObj.SelectToken("properties.municipality") ?? "")
+                    id_, munCode_, munName_
                 );
 
                 this.TmsStations.Add(tmsStation);
