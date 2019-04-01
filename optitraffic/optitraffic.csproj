@@ -70,17 +70,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AjaxSearchSuggestions.asmx" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\images\en.png" />
     <Content Include="assets\images\fin.png" />
     <Content Include="assets\images\graph.jpg" />
     <Content Include="assets\images\traffic.png" />
+    <Content Include="assets\SearchDropdown.js" />
     <Content Include="FrontPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ResultPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjaxSearchSuggestions.asmx.cs">
+      <DependentUpon>AjaxSearchSuggestions.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrontPage.aspx.cs">
       <DependentUpon>FrontPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
