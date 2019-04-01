@@ -41,38 +41,55 @@
         </header>
         <div class="parent container">
             <div class="row" runat="server">
-                <div class="heading">
-                    <span class="heading__text">What's the traffic load in...</span>
+                <div class="col-lg-12">
+                    <div class="heading">
+                        What's the traffic load in...
+                    </div>
+                    <form id="SearchForm" action="ResultPage.aspx" method="get" runat="server" autocomplete="off">
+                        <div class="input-group search-group" role="group">
+                            <asp:TextBox id="LocationName" class="form-control" placeholder="Search for a location..." name="LocationName" runat="server"></asp:TextBox>
+                            <span class="input-group-btn">
+                                <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
+                            </span>
+                        </div>
+                        <div class="search-results" id="searchOptions" runat="server">
+                            <ul>
+                                <li data-val="Porvoo">Porvoo</li>
+                                <li data-val="Espoo">Espoo</li>
+                                <li data-val="Vantaa">Vantaa</li>
+                                <li data-val="Helsinki">Helsinki</li>
+                            </ul>
+                        </div>
+                    </form>
                 </div>
-                <form id="SearchForm" action="ResultPage.aspx" method="get" runat="server" autocomplete="off">
-                    <div class="input-group search-group" role="group">
-                        <asp:TextBox id="LocationName" class="form-control" placeholder="Search for a location..." name="LocationName" runat="server"></asp:TextBox>
-                        <span class="input-group-btn">
-                            <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
-                        </span>
-                    </div>
-                    <div class="search-results" id="searchOptions" runat="server">
-                        <ul>
-                            <li data-val="Porvoo">Porvoo</li>
-                            <li data-val="Espoo">Espoo</li>
-                            <li data-val="Vantaa">Vantaa</li>
-                            <li data-val="Helsinki">Helsinki</li>
-                        </ul>
-                    </div>
-                </form>
             </div>
         </div>
         <footer>
-            <div class="container language-selection">
-                <div class="dropup">
-                    <button id="langDropdown" class="btn dropdown-toggle dropbtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choose language 
-                        <i class="fa fa-globe"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="langDropdown">
-                        <li><a href="#">Suomi</a></li>
-                        <li><a href="#">English</a></li>
-                    </ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6 credits">
+                        <span class="authors">
+                            LI00BJ50-3003/3004, ryhmä 10
+                        </span>
+                        <span class="year">
+                            2019
+                        </span>
+                    </div>
+                    <div class="col-md-3 language">
+                        <div class="dropup">
+                            <button id="langDropdown" class="btn dropdown-toggle dropbtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose language 
+                                <i class="fa fa-globe"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                                <li><a href="#">Suomi</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -39,7 +39,7 @@
         </header>
         <div class="content container result">
             <div class="box container">
-                <div class="left col-sm-12 col-md-8 col-lg-8">
+                <div class="left col-sm-12 col-md-12 col-lg-12">
                     <div class="location">
                         <h2>Päijät-häme</h2>
                     </div>
@@ -64,8 +64,8 @@
                 <div class="right col-sm-12 col-md-4 col-lg-4">
 
                 </div>
-                <div class="back col-sm-12 col-md-12 col-lg-12 container">
-                    <a href="FrontPage.aspx"><i class="fa fa-chevron-left"></i> Return back</a>
+                <div class="col-sm-12 col-md-12 col-lg-12 container">
+                    <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i> Return back</a>
                 </div>
             </div>
         </div>
