@@ -44,36 +44,22 @@
                 <div class="heading">
                     <span class="heading__text">What's the traffic load in...</span>
                 </div>
-                    <form id="SearchForm" runat="server" autocomplete="off">
-                        <asp:ScriptManager id="ScriptManager1" runat="server" EnablePartialRendering="true"></asp:ScriptManager>
-
-                        <asp:UpdatePanel id="UpdatePanel1" runat="server" UpdateMode="Conditional">
-                            <ContentTemplate>
-                                <div class="input-group search-group" role="group">
-                                    <asp:TextBox id="LocationName" class="form-control" placeholder="Search for a location..." name="search" runat="server" AutoPostBack="True" OnTextChanged="SearchTextInputChanged"></asp:TextBox>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-
-                        <asp:UpdatePanel id="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                            <ContentTemplate>
-                                    <div class="search-results" id="searchOptions" runat="server">
-                                        <ul>
-                                                    <%--<li data-val="porvoo">Porvoo</li>
-                                                    <li data-val="espoo">Espoo</li>
-                                                    <li data-val="vantaa">Vantaa</li>
-                                                    <li data-val="helsinki">Helsinki</li>--%>
-                                        </ul>
-                                    </div>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="LocationName" EventName="TextChanged" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </form>
+                <form id="SearchForm" runat="server" autocomplete="off">
+                    <div class="input-group search-group" role="group">
+                        <asp:TextBox ID="LocationName" class="form-control" placeholder="Search for a location..." name="search" runat="server"></asp:TextBox>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                    <div class="search-results" id="searchOptions" runat="server">
+                        <ul>
+                            <li data-val="Porvoo">Porvoo</li>
+                            <li data-val="Espoo">Espoo</li>
+                            <li data-val="Vantaa">Vantaa</li>
+                            <li data-val="Helsinki">Helsinki</li>
+                        </ul>
+                    </div>
+                </form>
             </div>
         </div>
         <footer>

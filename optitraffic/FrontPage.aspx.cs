@@ -10,18 +10,19 @@ using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-using optitraffic.Models;
+using optitraffic.Classes;
 
 namespace optitraffic
 {
+
     public partial class FrontPage : System.Web.UI.Page
     {
         protected List<TmsStation> TmsStations = new List<TmsStation>();
-        protected List<string> Municipalities = new List<string>();
+        protected List<Municipality> Municipalities = new List<Municipality>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Retrieve TMS stations
+            // Retrieve TMS stations and municipalities
             #region TMS stations retrieval
             string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);
             JObject stationsDataObj = JObject.Parse(stationsJson);
@@ -41,8 +42,8 @@ namespace optitraffic
 
                 munName_ = (string)(featureObj.SelectToken("properties.municipality") ?? "");
 
-                if (-1 == this.Municipalities.IndexOf(munName_))
-                    this.Municipalities.Add(munName_);
+                if (!string.IsNullOrWhiteSpace(munName_) && this.Municipalities.FindIndex(x => x.Name == munName_) == -1)
+                    this.Municipalities.Add(new Municipality(munName_, munCode_));
 
                 tmsStation = new TmsStation(
                     id_, munCode_, munName_
@@ -52,22 +53,7 @@ namespace optitraffic
             }
             #endregion
 
-            this.Municipalities.Sort();
-        }
-
-        protected void SearchTextInputChanged(object sender, EventArgs e)
-        {
-            List<string> suggestionsList = new List<string>();
-            foreach (var m in this.Municipalities)
-                if (null != m && m.StartsWith(this.LocationName.Text))
-                    suggestionsList.Add(m);
-
-            string resultHtml = "";
-
-            foreach (var suggesion in suggestionsList)
-                resultHtml += String.Format("<li data-val=\"{0}\">{1}</li>\n", suggesion, suggesion);
-
-            searchOptions.InnerHtml = "<ul>" + resultHtml + "</ul>";
+            this.Municipalities = this.Municipalities.OrderBy(o => o.Name).ToList();
         }
     }
 }

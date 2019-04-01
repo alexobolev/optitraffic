@@ -6,7 +6,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace optitraffic.Models
+namespace optitraffic.Classes
 {
     public class HttpHelper
     {

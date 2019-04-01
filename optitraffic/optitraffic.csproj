@@ -70,7 +70,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AjaxSearchSuggestions.asmx" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\images\en.png" />
     <Content Include="assets\images\fin.png" />
@@ -83,10 +82,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AjaxSearchSuggestions.asmx.cs">
-      <DependentUpon>AjaxSearchSuggestions.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Classes\Municipality.cs" />
     <Compile Include="FrontPage.aspx.cs">
       <DependentUpon>FrontPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,9 +93,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\HttpHelper.cs" />
-    <Compile Include="Models\TmsData.cs" />
-    <Compile Include="Models\TmsStation.cs" />
+    <Compile Include="Classes\HttpHelper.cs" />
+    <Compile Include="Classes\TmsData.cs" />
+    <Compile Include="Classes\TmsStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultPage.aspx.cs">
       <DependentUpon>ResultPage.aspx</DependentUpon>
