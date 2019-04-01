@@ -9,9 +9,10 @@ namespace optitraffic
 {
     public partial class ResultPage : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Title = this.Request["LocationName"];
         }
     }
 }

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" runat="server">
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
@@ -65,7 +65,7 @@
 
                 </div>
                 <div class="back col-sm-12 col-md-12 col-lg-12 container">
-                    <button><i class="fa fa-chevron-left"></i> Return back</button>
+                    <a href="FrontPage.aspx"><i class="fa fa-chevron-left"></i> Return back</a>
                 </div>
             </div>
         </div>

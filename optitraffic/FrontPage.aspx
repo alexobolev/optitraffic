@@ -44,11 +44,11 @@
                 <div class="heading">
                     <span class="heading__text">What's the traffic load in...</span>
                 </div>
-                <form id="SearchForm" runat="server" autocomplete="off">
+                <form id="SearchForm" action="ResultPage.aspx" method="get" runat="server" autocomplete="off">
                     <div class="input-group search-group" role="group">
-                        <asp:TextBox ID="LocationName" class="form-control" placeholder="Search for a location..." name="search" runat="server"></asp:TextBox>
+                        <asp:TextBox id="LocationName" class="form-control" placeholder="Search for a location..." name="LocationName" runat="server"></asp:TextBox>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                            <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
                         </span>
                     </div>
                     <div class="search-results" id="searchOptions" runat="server">
