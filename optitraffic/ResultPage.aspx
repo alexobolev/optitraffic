@@ -41,15 +41,13 @@
             <div class="box container">
                 <div class="left col-sm-12 col-md-12 col-lg-12">
                     <div class="location">
-                        <h2>Päijät-häme</h2>
+                        <h2><%= Subject.Name %></h2>
                     </div>
-                    <div class="traffic_bar">
-                        <div class="volume medium">
-
-                        </div>
+                    <div id="TrafficBar" class="traffic_bar">
+                        <div class="volume" style="width: <%= (LevelPercentage * 100).ToString() %>%; background-color: <%= GetColorByTraffic(LevelPercentage) %>;"></div>
                     </div>
                     <div class="volume_text">
-                        <span>LIGHT-MEDIUM TRAFFIC (ADT 789)</span>
+                        <span><%= GetTrafficLevelString(this.Level) %></span>
                     </div>
                     <div class="row">
                         <div class="static col-sm-12 col-md-6 col-lg-6">

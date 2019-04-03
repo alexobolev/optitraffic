@@ -55,5 +55,13 @@ namespace optitraffic
 
             this.Municipalities = this.Municipalities.OrderBy(o => o.Name).ToList();
         }
+
+        protected void SubmitBtn_Click(object sender, EventArgs e)
+        {
+            //int munIdx = this.Municipalities.FindIndex(m => m.Name == this.LocationName.Text);
+
+            //if (munIdx > -1)
+            //    this.LocationCode.Text = this.Municipalities[munIdx].Code.ToString();
+        }
     }
 }

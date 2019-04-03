@@ -171,7 +171,7 @@ footer {
     text-align: left;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    padding-top: 40px;
+    padding-top: 3vw;
 }
 
 .location {
@@ -197,11 +197,10 @@ footer {
 }
 
     .static img {
-        width: 30em;
+        max-width: 100%;
     }
 
 .textarea p {
-    margin-left: 1.0em;
     margin-top: 2.0em;
 }
 /* Container for skill bars */
@@ -213,18 +212,19 @@ footer {
 }
 
 .volume {
-    text-align: right; /* Right-align text */
     padding: 0.5em; /* Add some padding */
-    color: white; /* White text color */
     border-radius: 2.0em;
+    text-align: right; /* Right-align text */
+    color: white; /* White text color */
 }
 
 .volume_text {
+    margin-bottom: 1.5em;
     font-family: 'Roboto', sans-serif;
-    color: grey;
     font-size: 0.8em;
     text-align: center;
-    margin-bottom: 1.5em;
+    text-transform: uppercase;
+    color: grey;
 }
 
 .light {
@@ -247,7 +247,7 @@ footer {
     background-color: #f44336;
 }
 /* Red */
-.medium_plus {
+.hard_plus {
     width: 80%;
     background-color: #f44336;
 }

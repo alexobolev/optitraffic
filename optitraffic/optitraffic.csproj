@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Municipality.cs" />
+    <Compile Include="Classes\TrafficLevel.cs" />
     <Compile Include="FrontPage.aspx.cs">
       <DependentUpon>FrontPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
