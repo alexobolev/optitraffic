@@ -103,33 +103,39 @@ namespace optitraffic
         {
             List<Municipality> municipalities = new List<Municipality>();
 
-            if (CachedMunicipalities == null)
+            try
             {
-                string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);
-                JObject stationsDataObj = JObject.Parse(stationsJson);
-
-                int id_, munCode_;
-                string munName_;
-
-                IEnumerable<JToken> featureObjs = stationsDataObj.SelectTokens("$.features[*]");
-                foreach (JToken featureObj in featureObjs)
+                if (CachedMunicipalities == null)
                 {
-                    if (!int.TryParse((string)featureObj.SelectToken("id"), out id_))
-                        id_ = -1;
+                    string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);
+                    JObject stationsDataObj = JObject.Parse(stationsJson);
 
-                    if (!int.TryParse((string)featureObj.SelectToken("properties.municipalityCode"), out munCode_))
-                        munCode_ = -1;
+                    int id_, munCode_;
+                    string munName_;
 
-                    munName_ = (string)(featureObj.SelectToken("properties.municipality") ?? "");
+                    IEnumerable<JToken> featureObjs = stationsDataObj.SelectTokens("$.features[*]");
+                    foreach (JToken featureObj in featureObjs)
+                    {
+                        if (!int.TryParse((string)featureObj.SelectToken("id"), out id_))
+                            id_ = -1;
 
-                    if (!string.IsNullOrWhiteSpace(munName_) && municipalities.FindIndex(x => x.Name == munName_) == -1)
-                        municipalities.Add(new Municipality(munName_, munCode_));
+                        if (!int.TryParse((string)featureObj.SelectToken("properties.municipalityCode"), out munCode_))
+                            munCode_ = -1;
+
+                        munName_ = (string)(featureObj.SelectToken("properties.municipality") ?? "");
+
+                        if (!string.IsNullOrWhiteSpace(munName_) && municipalities.FindIndex(x => x.Name == munName_) == -1)
+                            municipalities.Add(new Municipality(munName_, munCode_));
+                    }
+
+                    CachedMunicipalities = municipalities.OrderBy(o => o.Name).ToList();
                 }
-                
-                CachedMunicipalities = municipalities.OrderBy(o => o.Name).ToList();
-            }
 
-            return CachedMunicipalities.Where(o => o.Name.StartsWith(inputValue)).ToList().Take(maxNum).ToList();
+                return CachedMunicipalities.Where(o => o.Name.StartsWith(inputValue)).ToList().Take(maxNum).ToList();
+            } catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         protected void RetrieveStationsAndMunicipalities()

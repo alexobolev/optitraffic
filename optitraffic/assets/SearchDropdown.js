@@ -20,6 +20,9 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (res) {
+                    if (res.d == null)
+                        return;
+
                     $("#searchOptions>ul").empty();
                     $.each(res.d, function () {
                         $("#searchOptions>ul").append(
@@ -40,6 +43,7 @@
     });
 
     $(document).on("click", ".search-results > ul > li", function () {
+        $("#LocationCode").val($(this).attr("data-code"));
         $("#LocationName").val($(this).attr("data-name"));
         $("#searchOptions").hide();
     });

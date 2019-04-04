@@ -42,6 +42,8 @@
         </header>
         <div class="content result">
             <div class="box container">
+                <% if (!IncompleteData)
+                    { %>
                 <div class="row data-row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="row location">
@@ -209,6 +211,18 @@
                         </div>
                     </div>
                 </div>
+                <% }
+                    else
+                    { %>
+                <div class="row error-row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-danger" role="alert">
+                            Bad request, please try again! <% if (ErrorReason.Length != 0)
+                                                               { %> <br />Error reason: <%= ErrorReason %> <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
                 <div class="row backlink-row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i><%= LocaleRes.GetString("ReturnToMainPage") %></a>

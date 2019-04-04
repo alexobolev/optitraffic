@@ -18,6 +18,8 @@ namespace optitraffic
         protected double LevelPercentage = 0;
 
         protected bool IncompleteData = false;
+        protected string ErrorReason = "";
+
         protected Random rnd = new Random();
 
         protected ResourceManager LocaleRes = null;
@@ -46,27 +48,33 @@ namespace optitraffic
                 Assembly.GetExecutingAssembly()
             );  // must be before anything else!
 
+
             if (null == this.Request["LocationName"] ||
-                false)
+                null == this.Request["LocationCode"])
             {
                 this.IncompleteData = true;
+                this.ErrorReason = "Either location name or code are missing.";
+                this.Subject = new Municipality("Lahti", 123);
             } else
             {
-                this.Subject.Name = this.Request["LocationName"];
+                try
+                {
+                    this.Subject = new Municipality(
+                        this.Request["LocationName"],
+                        int.Parse(this.Request["LocationCode"])
+                    );
+                } catch (FormatException ex)
+                {
+                    this.IncompleteData = true;
+                    this.ErrorReason = "Either location name or code are incorrect.";
+                    this.Subject = new Municipality("Lahti", 123);
+                }
             }
 
             // DUMMY DATA HERE
-
-            this.Subject = new Municipality("Lahti", 123);
             this.LevelPercentage = GetRandomTraffic();
             this.Level = TrafficUtils.DoubleToLevel(this.LevelPercentage);
-
-
-
             // END OF DUMMY DATA
-
-            //if (this.IncompleteData)
-            //    return;
         }
 
         public string GetTrafficBarStyleString()

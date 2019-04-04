@@ -188,6 +188,10 @@ footer {
 
 }
 
+.error-row {
+    padding-top: 2em;
+}
+
 .backlink-row {
     margin-top: 1.0em;
 }
