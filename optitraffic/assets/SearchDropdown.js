@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
 
     $("#LocationName").on("input", function (event) {
+        $("#LocationCode").val("");
+
         var inVal = $("#LocationName").val();
 
         if (inVal.length == 1) {
