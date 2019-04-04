@@ -16,6 +16,7 @@ namespace optitraffic
         protected double LevelPercentage = 0;
 
         protected bool IncompleteData = false;
+        protected Random rnd = new Random();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,10 +54,29 @@ namespace optitraffic
             return levelStrings[(int)this.Level];
         }
 
-        public static double GetRandomTraffic()
+        public double GetRandomTraffic()
         {
-            Random rnd = new Random();
             return rnd.NextDouble();
+        }
+
+        public string GetRandomMeasurementsStr(int min, int max)
+        {
+            if (max < min)
+                throw new ArgumentException("min > max");
+
+            int[] measurements = new int[5];
+
+            measurements[0] = rnd.Next(min, max / 2);
+            measurements[1] = rnd.Next(measurements[0], measurements[0] + (max - min) / 2);
+            measurements[2] = rnd.Next(min, max);
+            measurements[3] = rnd.Next(measurements[1], measurements[1] + (max - min) / 2);
+            measurements[4] = rnd.Next(min, max);
+
+            string measurementsStr = String.Format("[{0}, {1}, {2}, {3}, {4}]",
+                measurements[0], measurements[1], measurements[2], measurements[3], measurements[4]);
+
+
+            return measurementsStr;
         }
     }
 }

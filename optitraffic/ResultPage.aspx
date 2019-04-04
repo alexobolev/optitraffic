@@ -76,7 +76,8 @@
                                                 label: 'Measurement',
                                                 fill: false,
                                                 borderColor: '#534BAE',
-                                                data: [74, 63, 68, 80, 88]
+                                                data: <%= GetRandomMeasurementsStr(40, 100) %>
+                                                //data: [74, 63, 68, 80, 88]
                                             }]
                                         },
                                         options: {
@@ -129,8 +130,8 @@
                         <!-- Avg speed chart -->
                         <div class="row charts">
                             <div class="textarea col-sm-12 col-md-4 col-lg-4">
-                                <p>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</p>
-                                <p>Usually, the very important measurement in this municipality is high, but it has seen some additional rise lately.</p>
+                                <p>Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn't long enough to spend time looking for them.</p>
+                                <p>Usually, the local average speed in this municipality is high, but it has seen some additional rise lately.</p>
                             </div>
                             <div class="col-sm-12 col-md-8 col-lg-8">
                                 <div class="chart">
@@ -148,7 +149,8 @@
                                                 label: 'Avg. speed',
                                                 fill: false,
                                                 borderColor: '#FF6659',
-                                                data: [35, 39, 37, 40, 39]
+                                                data: <%= GetRandomMeasurementsStr(20, 50) %>
+                                                //data: [35, 39, 37, 40, 39]
                                             }]
                                         },
                                         options: {
