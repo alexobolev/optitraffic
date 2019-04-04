@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+
     <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -56,13 +58,139 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="static col-sm-12 col-md-6 col-lg-6">
-                                <img src="assets/images/graph.jpg" alt="static" />
-                                <p>According to www.SOMEAMAZINGDATASOURCE.org</p>
+                        <!-- Some very important measurement chart -->
+                        <div class="row charts">
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <div class="chart">
+                                    <canvas id="SomeVeryImportantChart" class="chart-body"></canvas>
+                                </div>
+                                <script>
+                                    var ctx = document.getElementById('SomeVeryImportantChart').getContext('2d');
+                                    var myChart = new Chart(ctx, {
+                                        type: 'line',
+
+                                        // The data for our dataset
+                                        data: {
+                                            labels: ['L. year', 'L. month', 'Yesterday', '-1 hour', '-5 mins'],
+                                            datasets: [{
+                                                label: 'Measurement',
+                                                fill: false,
+                                                borderColor: '#534BAE',
+                                                data: [74, 63, 68, 80, 88]
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            maintainAspectRatio: true,
+                                            aspectRatio: 1.5,
+                                            title: {
+                                                display: true,
+                                                text: 'Some very important measurement'
+                                            },
+                                            legend: {
+                                                display: false,
+                                                position: 'bottom',
+                                                labels: {
+                                                    padding: 0
+                                                }
+                                            },
+                                            scales: {
+                                                scaleLabel: {
+                                                    fontSize: 10
+                                                },
+                                                xAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: false,
+                                                        labelString: 'Value'
+                                                    },
+                                                    ticks: {
+                                                        suggestedMin: 40,
+                                                        suggestedMax: 100,
+                                                    }
+                                                }]
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
-                            <div class="textarea col-sm-12 col-md-6 col-lg-6">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <div class="textarea col-sm-12 col-md-4 col-lg-4">
+                                <p>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</p>
+                                <p>Usually, the very important measurement in this municipality is high, but it has seen some additional rise lately.</p>
+                            </div>
+                        </div>
+
+                        <!-- Avg speed chart -->
+                        <div class="row charts">
+                            <div class="textarea col-sm-12 col-md-4 col-lg-4">
+                                <p>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</p>
+                                <p>Usually, the very important measurement in this municipality is high, but it has seen some additional rise lately.</p>
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <div class="chart">
+                                    <canvas id="AvgSpeedChart" class="chart-body"></canvas>
+                                </div>
+                                <script>
+                                    var ctx = document.getElementById('AvgSpeedChart').getContext('2d');
+                                    var myChart = new Chart(ctx, {
+                                        type: 'line',
+
+                                        // The data for our dataset
+                                        data: {
+                                            labels: ['L. year', 'L. month', 'Yesterday', '-1 hour', '-5 mins'],
+                                            datasets: [{
+                                                label: 'Avg. speed',
+                                                fill: false,
+                                                borderColor: '#FF6659',
+                                                data: [35, 39, 37, 40, 39]
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            maintainAspectRatio: true,
+                                            aspectRatio: 1.5,
+                                            title: {
+                                                display: true,
+                                                text: 'Average speed'
+                                            },
+                                            legend: {
+                                                display: false,
+                                                position: 'bottom',
+                                                labels: {
+                                                    padding: 0
+                                                }
+                                            },
+                                            scales: {
+                                                scaleLabel: {
+                                                    fontSize: 10
+                                                },
+                                                xAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: false,
+                                                        labelString: 'Value'
+                                                    },
+                                                    ticks: {
+                                                        suggestedMin: 20,
+                                                        suggestedMax: 50,
+                                                    }
+                                                }]
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
