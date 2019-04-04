@@ -50,9 +50,55 @@ namespace optitraffic
             );  // must be before anything else!
             LocationName.Attributes.Add("placeholder", this.LocaleRes.GetString("SearchBoxPlaceholder"));
 
+            #region Municipalities initialization
+            List<string> municipalityNames = new List<string>() {
+                "Porvoo", "Espoo", "Vantaa", "Helsinki", "Järvenpää",
+                "Vihti", "Lohja", "Nurmijärvi", "Mäntsälä", "Loviisa",
+                "Karkkila", "Raasepori", "Tuusula", "Hyvinkää", "Inkoo",
+                "Sipoo", "Kirkkonummi", "Salo", "Hämeenkyrö", "Ikaalinen",
+                "Raisio", "Pyhäranta", "Pori", "Lieto", "Marttila",
+                "Sastamala", "Rauma", "Nakkila", "Eurajoki", "Ulvila",
+                "Parainen", "Kankaanpää", "Kaarina", "Turku", "Paimio",
+                "Masku", "Hamina", "Lappeenranta", "Virolahti", "Lempäälä",
+                "Valkeakoski", "Humppila", "Kangasala", "Hämeenlinna", "Nokia",
+                "Hollola", "Hausjärvi", "Ruovesi", "Ylöjärvi", "Akaa",
+                "Tammela", "Loppi", "Riihimäki", "Asikkala", "Janakkala",
+                "Tampere", "Heinola", "Lahti", "Orivesi", "Pirkkala",
+                "Pyhtää", "Iitti", "Kouvola", "Luumäki", "Rautjärvi",
+                "Mikkeli", "Ruokolahti", "Kotka", "Imatra", "Mäntyharju",
+                "Joroinen", "Juva", "Savonlinna", "Pieksämäki", "Kangasniemi",
+                "Hartola", "Pertunmaa", "Liperi", "Kitee", "Lieksa",
+                "Tohmajärvi", "Juuka", "Kontiolahti", "Joensuu", "Leppävirta",
+                "Siilinjärvi", "Tuusniemi", "Rautavaara", "Pielavesi", "Kiuruvesi",
+                "Suonenjoki", "Vieremä", "Kuopio", "Iisalmi", "Jyväskylä",
+                "Äänekoski", "Laukaa", "Saarijärvi", "Keuruu", "Kuhmoinen",
+                "Muurame", "Viitasaari", "Joutsa", "Jämsä", "Petäjävesi",
+                "Toivakka", "Isokyrö", "Mustasaari", "Kurikka", "Ilmajoki",
+                "Lapua", "Närpiö", "Kokkola", "Alavus", "Uusikaarlepyy",
+                "Alajärvi", "Evijärvi", "Vaasa", "Kauhava", "Seinäjoki",
+                "Pedersören kunta", "Kaustinen", "Ähtäri", "Kannus", "Kauhajoki",
+                "Kuortane", "Teuva", "Kristiinankaupunki", "Laihia", "Kalajoki",
+                "Vöyri", "Perho", "Pyhäjärvi", "Sievi", "Alavieska",
+                "Haapajärvi", "Kärsämäki", "Veteli", "Oulainen", "Oulu",
+                "Ii", "Kuusamo", "Raahe", "Liminka", "Siikalatva",
+                "Pudasjärvi", "Kempele", "Muhos", "Hailuoto", "Kajaani",
+                "Ristijärvi", "Kuhmo", "Sotkamo", "Vaala", "Puolanka",
+                "Suomussalmi", "Paltamo", "Tervola", "Inari", "Kemijärvi",
+                "Keminmaa", "Rovaniemi", "Kolari", "Posio", "Ranua",
+                "Ylitornio", "Salla", "Tornio", "Pello", "Muonio",
+                "Enontekiö", "Utsjoki", "Sodankylä", "Kemi", "Kittilä"
+            };
 
+            foreach (var name in municipalityNames)
+                this.Municipalities.Add(new Municipality(name, 0));
+
+            this.Municipalities = this.Municipalities.OrderBy(o => o.Name).ToList();
+            #endregion
+        }
+
+        protected void RetrieveStationsAndMunicipalities()
+        {
             // Retrieve TMS stations and municipalities
-            #region TMS stations retrieval
             string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);
             JObject stationsDataObj = JObject.Parse(stationsJson);
 
@@ -79,18 +125,9 @@ namespace optitraffic
                 );
 
                 this.TmsStations.Add(tmsStation);
+
+                this.Municipalities = this.Municipalities.OrderBy(o => o.Name).ToList();
             }
-            #endregion
-
-            this.Municipalities = this.Municipalities.OrderBy(o => o.Name).ToList();
-        }
-
-        protected void SubmitBtn_Click(object sender, EventArgs e)
-        {
-            //int munIdx = this.Municipalities.FindIndex(m => m.Name == this.LocationName.Text);
-
-            //if (munIdx > -1)
-            //    this.LocationCode.Text = this.Municipalities[munIdx].Code.ToString();
         }
     }
 }

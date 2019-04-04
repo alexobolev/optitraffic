@@ -53,7 +53,7 @@
                             <div class="input-group search-group" role="group">
                                 <asp:TextBox ID="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
                                 <span class="input-group-btn">
-                                    <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server" OnClick="SubmitBtn_Click"><i class="fa fa-search"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
                                 </span>
                             </div>
                             <div class="search-results" id="searchOptions" runat="server">
