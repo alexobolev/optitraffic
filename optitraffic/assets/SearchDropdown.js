@@ -1,39 +1,42 @@
 ﻿$(document).ready(function () {
 
-    $("#LocationName").on("keypress", function () {
+    $("#LocationName").on("input", function (event) {
         var inVal = $("#LocationName").val();
 
         if (inVal.length == 1) {
             return
         }
 
-        $.ajax({
-            type: "POST",
-            url: "FrontPage.aspx/GetMunicipalitiesByInput",
-            data: JSON.stringify({
-                inputValue: $("#LocationName").val(),
-                maxNum: 7
-            }),
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (res) {
-                $("#searchOptions>ul").empty();
-                $.each(res.d, function () {
-                    $("#searchOptions>ul").append(
-                        '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
-                    );
-                    $("#searchOptions").show();
-                });
+        setTimeout(function () {
+            event.stopImmediatePropagation();
 
-            },
-            failure: function (res) {
-                console.log(res.d);
-            },
-            error: function (res) {
-                console.log(res.d);
-            }
-        });
+            $.ajax({
+                type: "POST",
+                url: "FrontPage.aspx/GetMunicipalitiesByInput",
+                data: JSON.stringify({
+                    inputValue: $("#LocationName").val(),
+                    maxNum: 7
+                }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    $("#searchOptions>ul").empty();
+                    $.each(res.d, function () {
+                        $("#searchOptions>ul").append(
+                            '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
+                        );
+                        $("#searchOptions").show();
+                    });
 
+                },
+                failure: function (res) {
+                    console.log(res.d);
+                },
+                error: function (res) {
+                    console.log(res.d);
+                }
+            });
+        }, 250);
     });
 
     $(document).on("click", ".search-results > ul > li", function () {

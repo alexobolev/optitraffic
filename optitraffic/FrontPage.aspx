@@ -58,7 +58,7 @@
                             </div>
                             <div class="search-results" id="searchOptions" runat="server" style="display: none;">
                                 <ul>
-<%--                                    <li data-val="Porvoo">Porvoo</li>
+                                    <%--<li data-val="Porvoo">Porvoo</li>
                                     <li data-val="Espoo">Espoo</li>
                                     <li data-val="Vantaa">Vantaa</li>
                                     <li data-val="Helsinki">Helsinki</li>--%>
