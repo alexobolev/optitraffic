@@ -38,7 +38,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><%= LocaleRes.GetString("SiteTitle") %></a>
+                    <a class="navbar-brand" href="FrontPage.aspx"><%= LocaleRes.GetString("SiteTitle") %></a>
                 </div>
             </div>
         </header>
@@ -49,19 +49,21 @@
                         <%= LocaleRes.GetString("UserPrompt") %>
                     </div>
                     <form id="SearchForm" action="ResultPage.aspx" method="get" runat="server" autocomplete="off">
-                        <div class="input-group search-group" role="group">
-                            <asp:TextBox id="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
-                            <span class="input-group-btn">
-                                <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server" OnClick="SubmitBtn_Click"><i class="fa fa-search"></i></asp:LinkButton>
-                            </span>
-                        </div>
-                        <div class="search-results" id="searchOptions" runat="server">
-                            <ul>
-                                <li data-val="Porvoo">Porvoo</li>
-                                <li data-val="Espoo">Espoo</li>
-                                <li data-val="Vantaa">Vantaa</li>
-                                <li data-val="Helsinki">Helsinki</li>
-                            </ul>
+                        <div class="search-box">
+                            <div class="input-group search-group" role="group">
+                                <asp:TextBox ID="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
+                                <span class="input-group-btn">
+                                    <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server" OnClick="SubmitBtn_Click"><i class="fa fa-search"></i></asp:LinkButton>
+                                </span>
+                            </div>
+                            <div class="search-results" id="searchOptions" runat="server">
+                                <ul>
+                                    <li data-val="Porvoo">Porvoo</li>
+                                    <li data-val="Espoo">Espoo</li>
+                                    <li data-val="Vantaa">Vantaa</li>
+                                    <li data-val="Helsinki">Helsinki</li>
+                                </ul>
+                            </div>
                         </div>
                     </form>
                 </div>
