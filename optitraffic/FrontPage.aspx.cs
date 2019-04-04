@@ -96,6 +96,39 @@ namespace optitraffic
             #endregion
         }
 
+        [WebMethod]
+        public static List<Municipality> GetMunicipalitiesByInput(string inputValue, int maxNum)
+        {
+            List<Municipality> municipalities = new List<Municipality>();
+
+            string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);
+            JObject stationsDataObj = JObject.Parse(stationsJson);
+
+            int id_, munCode_;
+            string munName_;
+
+            IEnumerable<JToken> featureObjs = stationsDataObj.SelectTokens("$.features[*]");
+            foreach (JToken featureObj in featureObjs)
+            {
+                if (!int.TryParse((string)featureObj.SelectToken("id"), out id_))
+                    id_ = -1;
+
+                if (!int.TryParse((string)featureObj.SelectToken("properties.municipalityCode"), out munCode_))
+                    munCode_ = -1;
+
+                munName_ = (string)(featureObj.SelectToken("properties.municipality") ?? "");
+
+                if (!string.IsNullOrWhiteSpace(munName_) && municipalities.FindIndex(x => x.Name == munName_) == -1)
+                    municipalities.Add(new Municipality(munName_, munCode_));
+            }
+
+            municipalities = municipalities.OrderBy(o => o.Name).ToList();
+            municipalities = municipalities.Where(o => o.Name.StartsWith(inputValue)).ToList();
+            municipalities = municipalities.Take(maxNum).ToList();
+
+            return municipalities;
+        }
+
         protected void RetrieveStationsAndMunicipalities()
         {
             // Retrieve TMS stations and municipalities

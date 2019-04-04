@@ -51,17 +51,17 @@
                     <form id="SearchForm" action="ResultPage.aspx" method="get" runat="server" autocomplete="off">
                         <div class="search-box">
                             <div class="input-group search-group" role="group">
-                                <asp:TextBox ID="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
+                                <asp:TextBox id="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
                                 <span class="input-group-btn">
-                                    <asp:LinkButton ID="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
+                                    <asp:LinkButton id="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
                                 </span>
                             </div>
-                            <div class="search-results" id="searchOptions" runat="server">
+                            <div class="search-results" id="searchOptions" runat="server" style="display: none;">
                                 <ul>
-                                    <li data-val="Porvoo">Porvoo</li>
+<%--                                    <li data-val="Porvoo">Porvoo</li>
                                     <li data-val="Espoo">Espoo</li>
                                     <li data-val="Vantaa">Vantaa</li>
-                                    <li data-val="Helsinki">Helsinki</li>
+                                    <li data-val="Helsinki">Helsinki</li>--%>
                                 </ul>
                             </div>
                         </div>
