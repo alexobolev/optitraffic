@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="navbar navbar-inverse navbar-static-top navbar-themed">
+        <header class="navbar navbar-inverse navbar-fixed-top navbar-themed">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

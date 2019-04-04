@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="navbar navbar-inverse navbar-static-top navbar-themed">
+        <header class="navbar navbar-inverse navbar-fixed-top navbar-themed">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -37,37 +37,40 @@
                 </div>
             </div>
         </header>
-        <div class="content container result">
+        <div class="content result">
             <div class="box container">
-                <div class="left col-sm-12 col-md-12 col-lg-12">
-                    <div class="location">
-                        <h2><%= Subject.Name %></h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div id="TrafficBar" class="traffic_bar">
-                                <div class="volume" style="<%= GetTrafficBarStyleString() %>"></div>
-                            </div>
-                            <div class="volume_text">
-                                <span><%= GetTrafficLevelString() %></span>
+                <div class="row data-row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="row location">
+                            <div class="col-lg-12">
+                                <h2><%= Subject.Name %></h2>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="static col-sm-12 col-md-6 col-lg-6">
-                            <img src="assets/images/graph.jpg" alt="static" />
-                            <p>According to www.SOMEAMAZINGDATASOURCE.org</p>
+                        <div class="row traffic-level">
+                            <div class="col-lg-12">
+                                <div id="TrafficBar" class="traffic-bar">
+                                    <div class="volume" style="<%= GetTrafficBarStyleString() %>"></div>
+                                </div>
+                                <div class="volume-text">
+                                    <span><%= GetTrafficLevelString() %></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="textarea col-sm-12 col-md-6 col-lg-6">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div class="row">
+                            <div class="static col-sm-12 col-md-6 col-lg-6">
+                                <img src="assets/images/graph.jpg" alt="static" />
+                                <p>According to www.SOMEAMAZINGDATASOURCE.org</p>
+                            </div>
+                            <div class="textarea col-sm-12 col-md-6 col-lg-6">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="right col-sm-12 col-md-4 col-lg-4">
-
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-12 container">
-                    <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i> Return back</a>
+                <div class="row backlink-row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i>Return back</a>
+                    </div>
                 </div>
             </div>
         </div>

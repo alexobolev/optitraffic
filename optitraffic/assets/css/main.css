@@ -1,5 +1,6 @@
 ﻿body {
     background-size: 100%;
+    background-color: #fcfcfc !important;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
@@ -11,6 +12,7 @@
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 84px; /* 64px (navbar) + 20px (bottom margin) */
 }
 
 .navbar-themed {
@@ -166,6 +168,13 @@ footer {
     display: inline-block;
 }
 
+.data-row {
+
+}
+
+.backlink-row {
+    margin-top: 1.0em;
+}
 
 .result {
     text-align: left;
@@ -178,17 +187,23 @@ footer {
     padding: 1em 0 1.5em;
 }
 
+.traffic-level {
+    padding-bottom: 1.5em;
+}
+
 .box {
     flex: 1;
     height: 100%;
     border-radius: 3px 3px 0 0;
+    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.37);
     z-index: 1;
 }
 
-.left {
-    margin-bottom: 1.0em;
-}
+    .box.container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
 .static {
     font-family: 'Roboto', sans-serif;
@@ -210,21 +225,21 @@ footer {
 
 
 /* Container for bars */
-.traffic_bar {
+.traffic-bar {
     width: 100%; /* Full width */
     background-color: #ddd; /* Grey background */
     border-radius: 2.0em;
     margin-bottom: 1.0em;
 }
 
-.volume {
-    padding: 0.5em; /* Add some padding */
-    border-radius: 2.0em;
-    text-align: right; /* Right-align text */
-    color: white; /* White text color */
-}
+    .volume {
+        padding: 0.5em; /* Add some padding */
+        border-radius: 2.0em;
+        text-align: right; /* Right-align text */
+        color: white; /* White text color */
+    }
 
-.volume_text {
+.volume-text {
     margin-bottom: 1.5em;
     font-family: 'Roboto', sans-serif;
     font-size: 0.8em;
@@ -232,6 +247,7 @@ footer {
     text-transform: uppercase;
     color: grey;
 }
+
 
 /* Dark Grey */
 
