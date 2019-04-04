@@ -76,12 +76,18 @@
     <Content Include="assets\images\graph.jpg" />
     <Content Include="assets\images\traffic.png" />
     <Content Include="assets\SearchDropdown.js" />
+    <Content Include="assets\SetCookies.js" />
     <Content Include="FrontPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ResultPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="assets\locals\fi.Designer.cs">
+      <DependentUpon>fi.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="assets\locals\en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +131,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="assets\locals\fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="assets\locals\en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>en.Designer.cs</LastGenOutput>

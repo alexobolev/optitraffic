@@ -1,6 +1,6 @@
 ﻿body {
     background-size: 100%;
-    background-color: #fcfcfc !important;
+    background-color: #f9f9f9 !important;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
@@ -147,7 +147,7 @@ footer {
     }
 
 .dropbtn {
-    background-color: white;
+    background-color: transparent;
     color: #534BAE;
     padding: 1.0em;
     font-size: 1.0em;
@@ -155,9 +155,15 @@ footer {
     cursor: pointer;
 }
 
+    .dropbtn > i {
+        width: 18px;
+        text-align: right;
+    }
+
     .dropbtn:hover,
     .dropbtn:focus,
     .dropbtn:active {
+        background-color: transparent;
         box-shadow: none !important; /* Overriding bootstrap's inset box-shadow */
         color: #534BAE !important; /* Overriding bootstrap's default color change */
     }
@@ -252,11 +258,11 @@ footer {
 
 .volume-text {
     margin-bottom: 1.5em;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8em;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-size: 1em;
     text-align: center;
     text-transform: uppercase;
-    color: grey;
+    color: rgba(0, 0, 0, 0.37);
 }
 
 

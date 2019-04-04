@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,8 +20,32 @@ namespace optitraffic
         protected bool IncompleteData = false;
         protected Random rnd = new Random();
 
+        protected ResourceManager LocaleRes = null;
+
+
+        public string Locale
+        {
+            get
+            {
+                HttpCookie langInfo = Request.Cookies["lang"];
+                if (null == langInfo)
+                {
+                    langInfo = new HttpCookie("lang");
+                    langInfo.Value = "en";
+                }
+
+                return langInfo.Value;
+            }
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.LocaleRes = new ResourceManager(
+                String.Format("optitraffic.assets.locals.{0}", this.Locale),
+                Assembly.GetExecutingAssembly()
+            );  // must be before anything else!
+
             if (null == this.Request["LocationName"] ||
                 false)
             {
@@ -48,9 +74,9 @@ namespace optitraffic
             return String.Format("width: {0:F2}%; background-color: {1};", this.LevelPercentage * 100, TrafficUtils.DoubleToColor(this.LevelPercentage));
         }
 
-        public string GetTrafficLevelString()
+        public string GetTrafficLevelIdentifier()
         {
-            string[] levelStrings = { "No traffic", "Low traffic", "Medium traffic", "High traffic", "Take a bloody bicycle" };
+            string[] levelStrings = { "TrafficLvl0", "TrafficLvl1", "TrafficLvl2", "TrafficLvl3", "TrafficLvl4" };
             return levelStrings[(int)this.Level];
         }
 

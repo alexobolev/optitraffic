@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -20,8 +23,34 @@ namespace optitraffic
         protected List<TmsStation> TmsStations = new List<TmsStation>();
         protected List<Municipality> Municipalities = new List<Municipality>();
 
+        protected ResourceManager LocaleRes = null;
+
+
+        public string Locale
+        {
+            get
+            {
+                HttpCookie langInfo = Request.Cookies["lang"];
+                if (null == langInfo)
+                {
+                    langInfo = new HttpCookie("lang");
+                    langInfo.Value = "en";
+                }
+
+                return langInfo.Value;
+            }
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.LocaleRes = new ResourceManager(
+                String.Format("optitraffic.assets.locals.{0}", this.Locale),
+                Assembly.GetExecutingAssembly()
+            );  // must be before anything else!
+            LocationName.Attributes.Add("placeholder", this.LocaleRes.GetString("SearchBoxPlaceholder"));
+
+
             // Retrieve TMS stations and municipalities
             #region TMS stations retrieval
             string stationsJson = HttpHelper.Get(HttpHelper.TmsStationsUrl);

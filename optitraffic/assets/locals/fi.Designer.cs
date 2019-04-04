@@ -22,14 +22,14 @@ namespace optitraffic.assets.locals {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class en {
+    internal class fi {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en() {
+        internal fi() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace optitraffic.assets.locals {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("optitraffic.assets.locals.en", typeof(en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("optitraffic.assets.locals.fi", typeof(fi).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn&apos;t long enough to spend time looking for them..
+        ///   Looks up a localized string similar to FI Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn&apos;t long enough to spend time looking for them..
         /// </summary>
         internal static string AVGSPDMeasurementDesc {
             get {
@@ -70,7 +70,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Average speed.
+        ///   Looks up a localized string similar to FI Average speed.
         /// </summary>
         internal static string AVGSPDMeasurementName {
             get {
@@ -79,7 +79,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to L. year.
+        ///   Looks up a localized string similar to FI L. year.
         /// </summary>
         internal static string ChartPt0 {
             get {
@@ -88,7 +88,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to L. month.
+        ///   Looks up a localized string similar to FI L. month.
         /// </summary>
         internal static string ChartPt1 {
             get {
@@ -97,7 +97,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday.
+        ///   Looks up a localized string similar to FI Yesterday.
         /// </summary>
         internal static string ChartPt2 {
             get {
@@ -106,7 +106,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -1 hour.
+        ///   Looks up a localized string similar to FI -1 hour.
         /// </summary>
         internal static string ChartPt3 {
             get {
@@ -115,7 +115,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -5 mins.
+        ///   Looks up a localized string similar to FI -5 mins.
         /// </summary>
         internal static string ChartPt4 {
             get {
@@ -124,7 +124,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose language.
+        ///   Looks up a localized string similar to FI Choose language.
         /// </summary>
         internal static string ChooseLang {
             get {
@@ -133,7 +133,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Measurement.
+        ///   Looks up a localized string similar to FI Measurement.
         /// </summary>
         internal static string GenericMeasurementName {
             get {
@@ -142,7 +142,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle navigation.
+        ///   Looks up a localized string similar to FI Toggle navigation.
         /// </summary>
         internal static string MobileNavToggle {
             get {
@@ -151,7 +151,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LI00BJ50-3003/3004, group 10.
+        ///   Looks up a localized string similar to FI LI00BJ50-3003/3004, group 10.
         /// </summary>
         internal static string ProjectDesc {
             get {
@@ -160,7 +160,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Return back.
+        ///   Looks up a localized string similar to FI Return back.
         /// </summary>
         internal static string ReturnToMainPage {
             get {
@@ -169,7 +169,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search for a location....
+        ///   Looks up a localized string similar to FI Search for a location....
         /// </summary>
         internal static string SearchBoxPlaceholder {
             get {
@@ -178,7 +178,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OptiTraffic.
+        ///   Looks up a localized string similar to FI OptiTraffic.
         /// </summary>
         internal static string SiteTitle {
             get {
@@ -187,7 +187,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some very important measurement is very important because everybody uses it. Seriously, how can&apos;t they? It&apos;s just SO convenient!.
+        ///   Looks up a localized string similar to FI Some very important measurement is very important because everybody uses it. Seriously, how can&apos;t they? It&apos;s just SO convenient!.
         /// </summary>
         internal static string SVIMeasurementDesc {
             get {
@@ -196,7 +196,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some very important measurement.
+        ///   Looks up a localized string similar to FI Some very important measurement.
         /// </summary>
         internal static string SVIMeasurementName {
             get {
@@ -205,7 +205,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No traffic.
+        ///   Looks up a localized string similar to FI No traffic.
         /// </summary>
         internal static string TrafficLvl0 {
             get {
@@ -214,7 +214,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low traffic.
+        ///   Looks up a localized string similar to FI Low traffic.
         /// </summary>
         internal static string TrafficLvl1 {
             get {
@@ -223,7 +223,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medium traffic.
+        ///   Looks up a localized string similar to FI Medium traffic.
         /// </summary>
         internal static string TrafficLvl2 {
             get {
@@ -232,7 +232,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to High traffic.
+        ///   Looks up a localized string similar to FI High traffic.
         /// </summary>
         internal static string TrafficLvl3 {
             get {
@@ -241,7 +241,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take a bloody bicycle.
+        ///   Looks up a localized string similar to FI Take a bloody bicycle.
         /// </summary>
         internal static string TrafficLvl4 {
             get {
@@ -250,7 +250,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What&apos;s the traffic load in....
+        ///   Looks up a localized string similar to FI What&apos;s the traffic load in....
         /// </summary>
         internal static string UserPrompt {
             get {

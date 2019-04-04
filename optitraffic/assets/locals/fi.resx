@@ -118,73 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AVGSPDMeasurementDesc" xml:space="preserve">
-    <value>Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn't long enough to spend time looking for them.</value>
+    <value>FI Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn't long enough to spend time looking for them.</value>
     <comment>Something sane is welcome</comment>
   </data>
   <data name="AVGSPDMeasurementName" xml:space="preserve">
-    <value>Average speed</value>
+    <value>FI Average speed</value>
   </data>
   <data name="ChartPt0" xml:space="preserve">
-    <value>L. year</value>
+    <value>FI L. year</value>
   </data>
   <data name="ChartPt1" xml:space="preserve">
-    <value>L. month</value>
+    <value>FI L. month</value>
   </data>
   <data name="ChartPt2" xml:space="preserve">
-    <value>Yesterday</value>
+    <value>FI Yesterday</value>
   </data>
   <data name="ChartPt3" xml:space="preserve">
-    <value>-1 hour</value>
+    <value>FI -1 hour</value>
   </data>
   <data name="ChartPt4" xml:space="preserve">
-    <value>-5 mins</value>
+    <value>FI -5 mins</value>
   </data>
   <data name="ChooseLang" xml:space="preserve">
-    <value>Choose language</value>
+    <value>FI Choose language</value>
   </data>
   <data name="GenericMeasurementName" xml:space="preserve">
-    <value>Measurement</value>
+    <value>FI Measurement</value>
   </data>
   <data name="MobileNavToggle" xml:space="preserve">
-    <value>Toggle navigation</value>
+    <value>FI Toggle navigation</value>
   </data>
   <data name="ProjectDesc" xml:space="preserve">
-    <value>LI00BJ50-3003/3004, group 10</value>
+    <value>FI LI00BJ50-3003/3004, group 10</value>
   </data>
   <data name="ReturnToMainPage" xml:space="preserve">
-    <value>Return back</value>
+    <value>FI Return back</value>
   </data>
   <data name="SearchBoxPlaceholder" xml:space="preserve">
-    <value>Search for a location...</value>
+    <value>FI Search for a location...</value>
   </data>
   <data name="SiteTitle" xml:space="preserve">
-    <value>OptiTraffic</value>
+    <value>FI OptiTraffic</value>
     <comment>Leave as is</comment>
   </data>
   <data name="SVIMeasurementDesc" xml:space="preserve">
-    <value>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</value>
+    <value>FI Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</value>
     <comment>Something sane is welcome</comment>
   </data>
   <data name="SVIMeasurementName" xml:space="preserve">
-    <value>Some very important measurement</value>
+    <value>FI Some very important measurement</value>
   </data>
   <data name="TrafficLvl0" xml:space="preserve">
-    <value>No traffic</value>
+    <value>FI No traffic</value>
   </data>
   <data name="TrafficLvl1" xml:space="preserve">
-    <value>Low traffic</value>
+    <value>FI Low traffic</value>
   </data>
   <data name="TrafficLvl2" xml:space="preserve">
-    <value>Medium traffic</value>
+    <value>FI Medium traffic</value>
   </data>
   <data name="TrafficLvl3" xml:space="preserve">
-    <value>High traffic</value>
+    <value>FI High traffic</value>
   </data>
   <data name="TrafficLvl4" xml:space="preserve">
-    <value>Take a bloody bicycle</value>
+    <value>FI Take a bloody bicycle</value>
     <comment>To change</comment>
   </data>
   <data name="UserPrompt" xml:space="preserve">
-    <value>What's the traffic load in...</value>
+    <value>FI What's the traffic load in...</value>
   </data>
 </root>

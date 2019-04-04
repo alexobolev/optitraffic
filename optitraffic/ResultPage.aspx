@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <title>OptiTraffic</title>
+    <title><%= LocaleRes.GetString("SiteTitle") %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="assets/css/main.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.0/src/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
 
     <!--[if lt IE 9]>
@@ -30,12 +31,12 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"><%= LocaleRes.GetString("MobileNavToggle") %></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="FrontPage.aspx">OptiTraffic</a>
+                    <a class="navbar-brand" href="FrontPage.aspx"><%= LocaleRes.GetString("SiteTitle") %></a>
                 </div>
             </div>
         </header>
@@ -54,7 +55,7 @@
                                     <div class="volume" style="<%= GetTrafficBarStyleString() %>"></div>
                                 </div>
                                 <div class="volume-text">
-                                    <span><%= GetTrafficLevelString() %></span>
+                                    <span><%= LocaleRes.GetString(GetTrafficLevelIdentifier()) %></span>
                                 </div>
                             </div>
                         </div>
@@ -71,9 +72,15 @@
 
                                         // The data for our dataset
                                         data: {
-                                            labels: ['L. year', 'L. month', 'Yesterday', '-1 hour', '-5 mins'],
+                                            labels: [
+                                                '<%= LocaleRes.GetString("ChartPt0") %>',
+                                                '<%= LocaleRes.GetString("ChartPt1") %>',
+                                                '<%= LocaleRes.GetString("ChartPt2") %>',
+                                                '<%= LocaleRes.GetString("ChartPt3") %>',
+                                                '<%= LocaleRes.GetString("ChartPt4") %>'
+                                            ],
                                             datasets: [{
-                                                label: 'Measurement',
+                                                label: '<%= LocaleRes.GetString("GenericMeasurementName") %>',
                                                 fill: false,
                                                 borderColor: '#534BAE',
                                                 data: <%= GetRandomMeasurementsStr(40, 100) %>
@@ -86,7 +93,7 @@
                                             aspectRatio: 1.5,
                                             title: {
                                                 display: true,
-                                                text: 'Some very important measurement'
+                                                text: '<%= LocaleRes.GetString("SVIMeasurementName") %>'
                                             },
                                             legend: {
                                                 display: false,
@@ -122,7 +129,7 @@
                                 </script>
                             </div>
                             <div class="textarea col-sm-12 col-md-4 col-lg-4">
-                                <p>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</p>
+                                <p><%= LocaleRes.GetString("SVIMeasurementDesc") %></p>
                                 <p>Usually, the very important measurement in this municipality is high, but it has seen some additional rise lately.</p>
                             </div>
                         </div>
@@ -130,7 +137,7 @@
                         <!-- Avg speed chart -->
                         <div class="row charts">
                             <div class="textarea col-sm-12 col-md-4 col-lg-4">
-                                <p>Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn't long enough to spend time looking for them.</p>
+                                <p><%= LocaleRes.GetString("AVGSPDMeasurementDesc") %></p>
                                 <p>Usually, the local average speed in this municipality is high, but it has seen some additional rise lately.</p>
                             </div>
                             <div class="col-sm-12 col-md-8 col-lg-8">
@@ -142,11 +149,16 @@
                                     var myChart = new Chart(ctx, {
                                         type: 'line',
 
-                                        // The data for our dataset
                                         data: {
-                                            labels: ['L. year', 'L. month', 'Yesterday', '-1 hour', '-5 mins'],
+                                            labels: [
+                                                '<%= LocaleRes.GetString("ChartPt0") %>',
+                                                '<%= LocaleRes.GetString("ChartPt1") %>',
+                                                '<%= LocaleRes.GetString("ChartPt2") %>',
+                                                '<%= LocaleRes.GetString("ChartPt3") %>',
+                                                '<%= LocaleRes.GetString("ChartPt4") %>'
+                                            ],
                                             datasets: [{
-                                                label: 'Avg. speed',
+                                                label: '<%= LocaleRes.GetString("AVGSPDMeasurementName") %>',
                                                 fill: false,
                                                 borderColor: '#FF6659',
                                                 data: <%= GetRandomMeasurementsStr(20, 50) %>
@@ -159,7 +171,7 @@
                                             aspectRatio: 1.5,
                                             title: {
                                                 display: true,
-                                                text: 'Average speed'
+                                                text: '<%= LocaleRes.GetString("AVGSPDMeasurementName") %>'
                                             },
                                             legend: {
                                                 display: false,
@@ -199,7 +211,7 @@
                 </div>
                 <div class="row backlink-row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
-                        <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i>Return back</a>
+                        <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i><%= LocaleRes.GetString("ReturnToMainPage") %></a>
                     </div>
                 </div>
             </div>
