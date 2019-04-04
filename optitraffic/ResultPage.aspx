@@ -43,11 +43,15 @@
                     <div class="location">
                         <h2><%= Subject.Name %></h2>
                     </div>
-                    <div id="TrafficBar" class="traffic_bar">
-                        <div class="volume" style="width: <%= (LevelPercentage * 100).ToString() %>%; background-color: <%= GetColorByTraffic(LevelPercentage) %>;"></div>
-                    </div>
-                    <div class="volume_text">
-                        <span><%= GetTrafficLevelString(this.Level) %></span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="TrafficBar" class="traffic_bar">
+                                <div class="volume" style="<%= GetTrafficBarStyleString() %>"></div>
+                            </div>
+                            <div class="volume_text">
+                                <span><%= GetTrafficLevelString() %></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="static col-sm-12 col-md-6 col-lg-6">

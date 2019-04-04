@@ -200,10 +200,16 @@ footer {
         max-width: 100%;
     }
 
-.textarea p {
-    margin-top: 2.0em;
+.textarea {
+    padding-top: 2em;
 }
-/* Container for skill bars */
+
+    .textarea p {
+
+    }
+
+
+/* Container for bars */
 .traffic_bar {
     width: 100%; /* Full width */
     background-color: #ddd; /* Grey background */
@@ -227,30 +233,6 @@ footer {
     color: grey;
 }
 
-.light {
-    width: 20%;
-    background-color: #00F65A;
-}
-/* Green */
-.medium {
-    width: 30%;
-    background-color: #00F65A;
-}
-/* Green */
-.medium_plus {
-    width: 50%;
-    background-color: #ffa100;
-}
-/* Dark Grey */
-.hard {
-    width: 60%;
-    background-color: #f44336;
-}
-/* Red */
-.hard_plus {
-    width: 80%;
-    background-color: #f44336;
-}
 /* Dark Grey */
 
 .back-btn {

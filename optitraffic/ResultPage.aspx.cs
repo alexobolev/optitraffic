@@ -31,8 +31,10 @@ namespace optitraffic
             // DUMMY DATA HERE
 
             this.Subject = new Municipality("Lahti", 123);
-            this.Level = TrafficLevel.Medium;
-            this.LevelPercentage = 0.34;
+            this.LevelPercentage = GetRandomTraffic();
+            this.Level = TrafficUtils.DoubleToLevel(this.LevelPercentage);
+
+
 
             // END OF DUMMY DATA
 
@@ -40,27 +42,21 @@ namespace optitraffic
             //    return;
         }
 
-        public static string GetTrafficLevelString(TrafficLevel level)
+        public string GetTrafficBarStyleString()
         {
-            string[] levelStrings = { "No traffic", "Low traffic", "Medium traffic", "High traffic", "Take a bicycle" };
-            return levelStrings[(int)level];
+            return String.Format("width: {0:F2}%; background-color: {1};", this.LevelPercentage * 100, TrafficUtils.DoubleToColor(this.LevelPercentage));
         }
 
-        public static string GetColorByTraffic(double percentage)
+        public string GetTrafficLevelString()
         {
-            // 20% - 30% - 50% - 60% - 80%
-            string[] colors = { "#00F65A", "#00F65A", "#ffa100", "#f44336", "#f44336" };
+            string[] levelStrings = { "No traffic", "Low traffic", "Medium traffic", "High traffic", "Take a bloody bicycle" };
+            return levelStrings[(int)this.Level];
+        }
 
-            if (percentage >= 0.3)
-                return colors[1];
-            else if (percentage >= 0.5)
-                return colors[2];
-            else if (percentage >= 0.6)
-                return colors[3];
-            else if (percentage >= 0.8)
-                return colors[4];
-            else
-                return colors[0];
+        public static double GetRandomTraffic()
+        {
+            Random rnd = new Random();
+            return rnd.NextDouble();
         }
     }
 }
