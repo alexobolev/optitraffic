@@ -55,7 +55,7 @@
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .child {
@@ -101,6 +101,15 @@
         max-width: calc(100vw - 30px);
     }
 }
+
+        .search-results-hint {
+            padding: .2em 1em;
+        }
+
+            .search-results-hint > span {
+                color: rgba(0, 0, 0, 0.37);
+                font-size: .8em;
+            }
 
         .search-results > ul {
             display: block;

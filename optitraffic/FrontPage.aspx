@@ -55,6 +55,9 @@
                                 <ul>
 
                                 </ul>
+                                <div class="search-results-hint" id="searchOptionsHint">
+                                    <span>Hints appear after 2 characters...</span>
+                                </div>
                             </div>
                         </div>
                     </form>
