@@ -184,8 +184,12 @@ footer {
     display: inline-block;
 }
 
-.data-row {
+.dropdown-lang-options {
+    left: auto !important;
+    right: 0 !important;
+}
 
+.data-row {
 }
 
 .error-row {

@@ -1,5 +1,12 @@
 ﻿$(document).ready(function () {
 
+    $("#LocationName").on("keypress", function (event) {
+        if (event.which == 13) {
+            $("#SearchForm").submit();
+            return false;
+        }
+    });
+
     $("#LocationName").on("input", function (event) {
         $("#LocationCode").val("");
 
@@ -47,7 +54,7 @@
                     console.log(res.d);
                 }
             });
-        }, 250);
+        }, 150);
     });
 
     $(document).on("click", ".search-results > ul > li", function () {

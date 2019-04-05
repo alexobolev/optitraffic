@@ -90,7 +90,7 @@
                                 <%= LocaleRes.GetString("ChooseLang") %>
                                 <i class="fa fa-globe"></i>
                             </button>
-                            <ul id="LangDropdownOptions" class="dropdown-menu" aria-labelledby="langDropdown">
+                            <ul id="LangDropdownOptions" class="dropdown-menu dropdown-lang-options" aria-labelledby="langDropdown">
                                 <li><a href="#" data-locale="fi">Suomi</a></li>
                                 <li><a href="#" data-locale="en">English</a></li>
                             </ul>
