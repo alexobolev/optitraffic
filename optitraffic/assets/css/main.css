@@ -96,6 +96,12 @@
         z-index: 9;
     }
 
+@media only screen and (max-width: 435px) {
+    .search-results {
+        max-width: calc(100vw - 30px);
+    }
+}
+
         .search-results > ul {
             display: block;
             margin: 0;
