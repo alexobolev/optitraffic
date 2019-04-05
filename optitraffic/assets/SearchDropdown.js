@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
 
+    $("#SearchForm").on("submit", function (event) {
+        if ($("#LocationCode").val() == "") {
+            event.preventDefault();
+        }
+    });
+
     $("#LocationName").on("keypress", function (event) {
         if (event.which == 13) {
             $("#SearchForm").submit();
@@ -37,7 +43,7 @@
                         $("#searchOptions>ul").append(
                             '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
-                        //console.log(this.Name.toLowerCase() + " " + $("#LocationName").val().toLowerCase());
+
                         if (this.Name.toLowerCase() == $("#LocationName").val().toLowerCase()) {
                             $("#LocationCode").val(this.Code);
                             $("#searchOptions").hide();
