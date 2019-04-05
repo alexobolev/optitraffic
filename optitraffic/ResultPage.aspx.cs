@@ -79,7 +79,7 @@ namespace optitraffic
 
         public string GetTrafficBarStyleString()
         {
-            return String.Format("width: {0:F2}%; background-color: {1};", this.LevelPercentage * 100, TrafficUtils.DoubleToColor(this.LevelPercentage));
+            return String.Format(new System.Globalization.CultureInfo("en-US"), "width: {0:F2}%; background-color: {1};", this.LevelPercentage * 100, TrafficUtils.DoubleToColor(this.LevelPercentage));
         }
 
         public string GetTrafficLevelIdentifier()
