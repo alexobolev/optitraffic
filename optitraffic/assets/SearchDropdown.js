@@ -30,7 +30,13 @@
                         $("#searchOptions>ul").append(
                             '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
-                        $("#searchOptions").show();
+                        //console.log(this.Name.toLowerCase() + " " + $("#LocationName").val().toLowerCase());
+                        if (this.Name.toLowerCase() == $("#LocationName").val().toLowerCase()) {
+                            $("#LocationCode").val(this.Code);
+                            $("#searchOptions").hide();
+                        } else {
+                            $("#searchOptions").show();
+                        }
                     });
 
                 },
