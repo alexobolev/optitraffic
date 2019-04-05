@@ -101,6 +101,7 @@ namespace optitraffic
         [WebMethod]
         public static List<Municipality> GetMunicipalitiesByInput(string inputValue, int maxNum)
         {
+            inputValue = inputValue.ToLower();
             List<Municipality> municipalities = new List<Municipality>();
 
             try
@@ -131,7 +132,7 @@ namespace optitraffic
                     CachedMunicipalities = municipalities.OrderBy(o => o.Name).ToList();
                 }
 
-                return CachedMunicipalities.Where(o => o.Name.StartsWith(inputValue)).ToList().Take(maxNum).ToList();
+                return CachedMunicipalities.Where(o => o.Name.ToLower().StartsWith(inputValue)).ToList().Take(maxNum).ToList();
             } catch (Exception ex)
             {
                 return null;
