@@ -48,7 +48,6 @@ namespace optitraffic
                 Assembly.GetExecutingAssembly()
             );  // must be before anything else!
 
-
             if (null == this.Request["LocationName"] ||
                 null == this.Request["LocationCode"])
             {
@@ -70,6 +69,8 @@ namespace optitraffic
                     this.Subject = new Municipality("Lahti", 123);
                 }
             }
+
+            this.Subject.Name = StringHelper.CapitalizeFirstChar(this.Subject.Name);
 
             // DUMMY DATA HERE
             this.LevelPercentage = GetRandomTraffic();

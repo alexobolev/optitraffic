@@ -94,6 +94,7 @@
       <DependentUpon>en.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Municipality.cs" />
+    <Compile Include="Classes\StringHelper.cs" />
     <Compile Include="Classes\TrafficLevel.cs" />
     <Compile Include="Classes\TrafficUtils.cs" />
     <Compile Include="FrontPage.aspx.cs">
