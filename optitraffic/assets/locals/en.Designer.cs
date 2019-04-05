@@ -133,6 +133,33 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Either location name or code are incorrect..
+        /// </summary>
+        internal static string ErrDataIncorrect {
+            get {
+                return ResourceManager.GetString("ErrDataIncorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Either location name or code are missing..
+        /// </summary>
+        internal static string ErrDataMissing {
+            get {
+                return ResourceManager.GetString("ErrDataMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bad request, please try again!.
+        /// </summary>
+        internal static string ErrGeneric {
+            get {
+                return ResourceManager.GetString("ErrGeneric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Measurement.
         /// </summary>
         internal static string GenericMeasurementName {

@@ -189,4 +189,14 @@
   <data name="UserPrompt" xml:space="preserve">
     <value>Tarkista liikennetilanne..</value>
   </data>
+  <data name="ErrDataIncorrect" xml:space="preserve">
+    <value>Virheellinen paikkakunnan nimi</value>
+  </data>
+  <data name="ErrDataMissing" xml:space="preserve">
+    <value>Kirjoita paikkakunta</value>
+  </data>
+  <data name="ErrGeneric" xml:space="preserve">
+    <value>Tapahtui virhe, yritä uudestaan!</value>
+    <comment>Tapahtui virhe, yrit </comment>
+  </data>
 </root>

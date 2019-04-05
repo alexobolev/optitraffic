@@ -53,7 +53,7 @@ namespace optitraffic
                 null == this.Request["LocationCode"])
             {
                 this.IncompleteData = true;
-                this.ErrorReason = "Either location name or code are missing.";
+                this.ErrorReason = this.LocaleRes.GetString("ErrDataMissing");
                 this.Subject = new Municipality("Lahti", 123);
             } else
             {
@@ -66,7 +66,7 @@ namespace optitraffic
                 } catch (FormatException ex)
                 {
                     this.IncompleteData = true;
-                    this.ErrorReason = "Either location name or code are incorrect.";
+                    this.ErrorReason = this.LocaleRes.GetString("ErrDataIncorrect");
                     this.Subject = new Municipality("Lahti", 123);
                 }
             }

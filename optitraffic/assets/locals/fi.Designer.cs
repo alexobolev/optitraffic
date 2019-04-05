@@ -61,7 +61,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn&apos;t long enough to spend time looking for them..
+        ///   Looks up a localized string similar to Tekstiä keskinopeudesta ja kuinka kaavio sen näyttää..
         /// </summary>
         internal static string AVGSPDMeasurementDesc {
             get {
@@ -70,7 +70,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Average speed.
+        ///   Looks up a localized string similar to Keskinopeus.
         /// </summary>
         internal static string AVGSPDMeasurementName {
             get {
@@ -79,7 +79,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI L. year.
+        ///   Looks up a localized string similar to Edellinen vuosi.
         /// </summary>
         internal static string ChartPt0 {
             get {
@@ -88,7 +88,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI L. month.
+        ///   Looks up a localized string similar to Edellinen kuukausi.
         /// </summary>
         internal static string ChartPt1 {
             get {
@@ -97,7 +97,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Yesterday.
+        ///   Looks up a localized string similar to Eilen.
         /// </summary>
         internal static string ChartPt2 {
             get {
@@ -106,7 +106,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI -1 hour.
+        ///   Looks up a localized string similar to -1 tunti.
         /// </summary>
         internal static string ChartPt3 {
             get {
@@ -115,7 +115,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI -5 mins.
+        ///   Looks up a localized string similar to -5 minuuttia.
         /// </summary>
         internal static string ChartPt4 {
             get {
@@ -124,7 +124,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Choose language.
+        ///   Looks up a localized string similar to Vakitse kieli.
         /// </summary>
         internal static string ChooseLang {
             get {
@@ -133,7 +133,34 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Measurement.
+        ///   Looks up a localized string similar to Virheellinen paikkakunnan nimi.
+        /// </summary>
+        internal static string ErrDataIncorrect {
+            get {
+                return ResourceManager.GetString("ErrDataIncorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kirjoita paikkakunta.
+        /// </summary>
+        internal static string ErrDataMissing {
+            get {
+                return ResourceManager.GetString("ErrDataMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tapahtui virhe, yritä uudestaan!.
+        /// </summary>
+        internal static string ErrGeneric {
+            get {
+                return ResourceManager.GetString("ErrGeneric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kaavio.
         /// </summary>
         internal static string GenericMeasurementName {
             get {
@@ -142,7 +169,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Toggle navigation.
+        ///   Looks up a localized string similar to Valikko.
         /// </summary>
         internal static string MobileNavToggle {
             get {
@@ -151,7 +178,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI LI00BJ50-3003/3004, group 10.
+        ///   Looks up a localized string similar to LI00BJ50-3003/3004, ryhmä 10.
         /// </summary>
         internal static string ProjectDesc {
             get {
@@ -160,7 +187,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Return back.
+        ///   Looks up a localized string similar to Paluu.
         /// </summary>
         internal static string ReturnToMainPage {
             get {
@@ -169,7 +196,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Search for a location....
+        ///   Looks up a localized string similar to Kirjoita sijainti.
         /// </summary>
         internal static string SearchBoxPlaceholder {
             get {
@@ -178,7 +205,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI OptiTraffic.
+        ///   Looks up a localized string similar to OptiTraffic.
         /// </summary>
         internal static string SiteTitle {
             get {
@@ -187,7 +214,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Some very important measurement is very important because everybody uses it. Seriously, how can&apos;t they? It&apos;s just SO convenient!.
+        ///   Looks up a localized string similar to Kaavio alueen liikennetilanteesta ja tietoa kaaviosta. .
         /// </summary>
         internal static string SVIMeasurementDesc {
             get {
@@ -196,7 +223,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Some very important measurement.
+        ///   Looks up a localized string similar to Liikennetilanne.
         /// </summary>
         internal static string SVIMeasurementName {
             get {
@@ -205,7 +232,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI No traffic.
+        ///   Looks up a localized string similar to Ei liikennettä.
         /// </summary>
         internal static string TrafficLvl0 {
             get {
@@ -214,7 +241,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Low traffic.
+        ///   Looks up a localized string similar to Liikenne vähäistä.
         /// </summary>
         internal static string TrafficLvl1 {
             get {
@@ -223,7 +250,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Medium traffic.
+        ///   Looks up a localized string similar to Liikenne normaalia.
         /// </summary>
         internal static string TrafficLvl2 {
             get {
@@ -232,7 +259,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI High traffic.
+        ///   Looks up a localized string similar to Liikenne vilkasta.
         /// </summary>
         internal static string TrafficLvl3 {
             get {
@@ -241,7 +268,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI Take a bloody bicycle.
+        ///   Looks up a localized string similar to Liikenne ruuhka.
         /// </summary>
         internal static string TrafficLvl4 {
             get {
@@ -250,7 +277,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FI What&apos;s the traffic load in....
+        ///   Looks up a localized string similar to Tarkista liikennetilanne...
         /// </summary>
         internal static string UserPrompt {
             get {

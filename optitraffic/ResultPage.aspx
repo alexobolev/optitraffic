@@ -217,7 +217,7 @@
                 <div class="row error-row">
                     <div class="col-lg-12">
                         <div class="alert alert-danger" role="alert">
-                            Bad request, please try again! <% if (ErrorReason.Length != 0)
+                            <%= LocaleRes.GetString("ErrGeneric") %> <% if (ErrorReason.Length != 0)
                                                                { %> <br />Error reason: <%= ErrorReason %> <% } %>
                         </div>
                     </div>
