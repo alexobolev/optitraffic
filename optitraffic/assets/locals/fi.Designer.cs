@@ -124,7 +124,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vakitse kieli.
+        ///   Looks up a localized string similar to Valitse kieli.
         /// </summary>
         internal static string ChooseLang {
             get {
