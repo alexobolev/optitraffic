@@ -71,10 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\main.css" />
-    <Content Include="assets\images\en.png" />
-    <Content Include="assets\images\fin.png" />
-    <Content Include="assets\images\graph.jpg" />
-    <Content Include="assets\images\traffic.png" />
     <Content Include="assets\SearchDropdown.js" />
     <Content Include="assets\SetCookies.js" />
     <Content Include="FrontPage.aspx" />
@@ -131,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="assets\locals\fi.resx">
