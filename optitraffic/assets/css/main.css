@@ -124,7 +124,12 @@
                 cursor: pointer;
             }
 
-                .search-results > ul > li:hover {
+                .search-results > ul > li.sel {
+                    background-color: #f3f3f3;
+                }
+
+                .search-results > ul > li:hover,
+                .search-results > ul > li:active {
                     background-color: #eee;
                 }
 

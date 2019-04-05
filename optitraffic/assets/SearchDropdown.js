@@ -29,11 +29,46 @@ $(document).ready(function () {
     //    $("#searchOptions").hide();
     //});
 
-    $("#LocationName").on("keypress", function (event) {
+    var selectedHintIdx = -1;
+    var selectableHints = 0;
+
+    $("#LocationName").on("keydown", function (event) {
         if (event.which == 13) {
+
+            if (selectedHintIdx != -1) {
+                $("#searchOptions>ul>li").eq(selectedHintIdx).click();
+            }
+
             $("#SearchForm").submit();
             return false;
         }
+
+        if (selectableHints > 0) {
+            if (event.which == 40) {
+                event.preventDefault();
+
+                if (selectedHintIdx + 1 < selectableHints) {
+                    selectedHintIdx += 1;
+                } else {
+                    selectedHintIdx = 0;
+                }
+            } else if (event.which == 38) {
+                event.preventDefault();
+
+                if (selectedHintIdx - 1 >= 0) {
+                    selectedHintIdx -= 1;
+                } else {
+                    selectedHintIdx = selectableHints - 1;
+                }
+            }
+
+            $("#searchOptions>ul>li").removeClass("sel");
+            $("#searchOptions>ul>li").eq(selectedHintIdx).addClass("sel");
+
+        } else {
+            selectedHintIdx = -1;
+        }
+
     });
 
     $("#LocationName").on("input", function (event) {
@@ -45,6 +80,7 @@ $(document).ready(function () {
         $("#searchOptions").show();
 
         if (inVal.length < 2) {
+            selectableHints = 0;
             $("#searchOptions>ul").empty();
             $("#searchOptionsHint").show();
             return;
@@ -71,7 +107,11 @@ $(document).ready(function () {
                     $("#searchOptionsHint").hide();
                     $("#searchOptions>ul").empty();
 
+                    selectableHints = 0;
+
                     $.each(res.d, function () {
+                        selectableHints += 1;
+
                         $("#searchOptions>ul").append(
                             '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
