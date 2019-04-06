@@ -5,13 +5,28 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
+using optitraffic.Classes;
+
 namespace optitraffic
 {
     public class Global : System.Web.HttpApplication
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            List<TmsStation> tmsStations = new List<TmsStation>();
+            List<Municipality> municipalities = new List<Municipality>();
 
+            if (!DataRetriever.GetStationsAndMunicipalities(ref tmsStations, ref municipalities))
+            {
+                Application["InitialLoadFailed"] = true;
+                Application["TmsStations"] = null;
+                Application["Municipalities"] = null;
+            } else
+            {
+                Application["InitialLoadFailed"] = false;
+                Application["TmsStations"] = tmsStations;
+                Application["Municipalities"] = municipalities;
+            }
         }
 
         /// <summary>

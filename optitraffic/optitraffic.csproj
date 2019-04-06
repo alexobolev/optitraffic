@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\DataRetriever.cs" />
     <Compile Include="Classes\Municipality.cs" />
     <Compile Include="Classes\StringHelper.cs" />
     <Compile Include="Classes\TrafficLevel.cs" />
