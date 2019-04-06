@@ -24,6 +24,9 @@ namespace optitraffic
 
         protected ResourceManager LocaleRes = null;
 
+        protected string ReqLocationName = null;
+        protected int ReqLocationCode = -1;
+
 
         public string Locale
         {
@@ -48,8 +51,27 @@ namespace optitraffic
                 Assembly.GetExecutingAssembly()
             );  // must be before anything else!
 
-            if (null == this.Request["LocationName"] ||
-                null == this.Request["LocationCode"])
+
+            try
+            {
+                this.ReqLocationName = HttpUtility.HtmlEncode(this.Request["LocationName"]);
+            }
+            catch (Exception ex)
+            {
+                this.ReqLocationName = null;
+            }
+
+            try
+            {
+                this.ReqLocationCode = int.Parse(HttpUtility.HtmlEncode(this.Request["LocationCode"]));
+            } catch (Exception ex)
+            {
+                this.ReqLocationCode = -1;
+            }
+
+
+            if (null == this.ReqLocationName ||
+                -1 == this.ReqLocationCode)
             {
                 this.IncompleteData = true;
                 this.ErrorReason = this.LocaleRes.GetString("ErrDataMissing");
@@ -59,8 +81,8 @@ namespace optitraffic
                 try
                 {
                     this.Subject = new Municipality(
-                        this.Request["LocationName"],
-                        int.Parse(this.Request["LocationCode"])
+                        this.ReqLocationName,
+                        this.ReqLocationCode
                     );
                 } catch (FormatException ex)
                 {

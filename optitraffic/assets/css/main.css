@@ -88,6 +88,7 @@
         position: absolute;
         width: 100%;
         max-width: 400px;
+        min-height: 2em;
         margin: -10px auto 0;
         padding: 10px 0 .4em;
         background-color: #fff;
