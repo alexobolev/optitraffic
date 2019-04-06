@@ -18,33 +18,11 @@ using optitraffic.Classes;
 namespace optitraffic
 {
 
-    public partial class FrontPage : System.Web.UI.Page
+    public partial class FrontPage : BasePage
     {
-        protected ResourceManager LocaleRes = null;
-
-
-        public string Locale
+        protected override void Page_Load(object sender, EventArgs e)
         {
-            get
-            {
-                HttpCookie langInfo = Request.Cookies["lang"];
-                if (null == langInfo)
-                {
-                    langInfo = new HttpCookie("lang");
-                    langInfo.Value = "en";
-                }
-
-                return langInfo.Value;
-            }
-        }
-
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            this.LocaleRes = new ResourceManager(
-                String.Format("optitraffic.assets.locals.{0}", this.Locale),
-                Assembly.GetExecutingAssembly()
-            );  // must be before anything else!
+            base.Page_Load(sender, e);
             LocationName.Attributes.Add("placeholder", this.LocaleRes.GetString("SearchBoxPlaceholder"));
         }
 

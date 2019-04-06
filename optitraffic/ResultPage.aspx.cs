@@ -11,7 +11,7 @@ using optitraffic.Classes;
 
 namespace optitraffic
 {
-    public partial class ResultPage : System.Web.UI.Page
+    public partial class ResultPage : BasePage
     {
         protected Municipality Subject;
         protected TrafficLevel Level;
@@ -22,35 +22,13 @@ namespace optitraffic
 
         protected Random rnd = new Random();
 
-        protected ResourceManager LocaleRes = null;
-
         protected string ReqLocationName = null;
         protected int ReqLocationCode = -1;
 
 
-        public string Locale
+        protected override void Page_Load(object sender, EventArgs e)
         {
-            get
-            {
-                HttpCookie langInfo = Request.Cookies["lang"];
-                if (null == langInfo)
-                {
-                    langInfo = new HttpCookie("lang");
-                    langInfo.Value = "en";
-                }
-
-                return langInfo.Value;
-            }
-        }
-
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            this.LocaleRes = new ResourceManager(
-                String.Format("optitraffic.assets.locals.{0}", this.Locale),
-                Assembly.GetExecutingAssembly()
-            );  // must be before anything else!
-
+            base.Page_Load(sender, e);
 
             try
             {

@@ -91,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Classes\DataRetriever.cs" />
     <Compile Include="Classes\Municipality.cs" />
     <Compile Include="Classes\StringHelper.cs" />
