@@ -56,7 +56,14 @@
 
                                 </ul>
                                 <div class="search-results-hint" id="searchOptionsHint">
-                                    <span>Hints appear after 2 characters...</span>
+                                    <span>
+                                        <% if (!(bool)Application["InitialLoadFailed"])
+                                           { %>
+                                        Hints appear after 2 characters...
+                                        <% } else {%> 
+                                        Failed to load data, hints won't appear...
+                                        <% } %>
+                                    </span>
                                 </div>
                             </div>
                         </div>
