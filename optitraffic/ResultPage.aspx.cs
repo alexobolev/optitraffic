@@ -32,45 +32,29 @@ namespace optitraffic
 
             try
             {
-                this.ReqLocationName = HttpUtility.HtmlEncode(this.Request["LocationName"]);
+                this.ReqLocationName = this.Request["LocationName"];
+                this.ReqLocationCode = int.Parse(this.Request["LocationCode"]);
+
+                if (null == this.ReqLocationName ||
+                    -1 == this.ReqLocationCode)
+                    throw new Exception();
+
+                this.Subject = new Municipality(
+                    ((List<Municipality>)HttpContext.Current.Application["Municipalities"])
+                        .Where(o => o.Code == this.ReqLocationCode)
+                        .ToList()
+                        .Single()
+                        .Name,
+                    this.ReqLocationCode
+                );
+
             }
             catch (Exception ex)
             {
-                this.ReqLocationName = null;
-            }
-
-            try
-            {
-                this.ReqLocationCode = int.Parse(HttpUtility.HtmlEncode(this.Request["LocationCode"]));
-            } catch (Exception ex)
-            {
-                this.ReqLocationCode = -1;
-            }
-
-
-            if (null == this.ReqLocationName ||
-                -1 == this.ReqLocationCode)
-            {
                 this.IncompleteData = true;
-                this.ErrorReason = this.LocaleRes.GetString("ErrDataMissing");
-                this.Subject = new Municipality("Lahti", 123);
-            } else
-            {
-                try
-                {
-                    this.Subject = new Municipality(
-                        this.ReqLocationName,
-                        this.ReqLocationCode
-                    );
-                } catch (FormatException ex)
-                {
-                    this.IncompleteData = true;
-                    this.ErrorReason = this.LocaleRes.GetString("ErrDataIncorrect");
-                    this.Subject = new Municipality("Lahti", 123);
-                }
+                this.ErrorReason = this.LocaleRes.GetString("ErrDataIncorrect");
+                this.Subject = new Municipality("Lahti", 398);
             }
-
-            this.Subject.Name = StringHelper.CapitalizeFirstChar(this.Subject.Name);
 
             // DUMMY DATA HERE
             this.LevelPercentage = GetRandomTraffic();
