@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -26,6 +27,22 @@ namespace optitraffic
                 Application["InitialLoadFailed"] = false;
                 Application["TmsStations"] = tmsStations;
                 Application["Municipalities"] = municipalities;
+            }
+
+            try
+            {
+                List<String> localesAvailable = Assembly
+                    .GetExecutingAssembly()
+                    .GetTypes()
+                    .Where(t => t.Namespace == "optitraffic.assets.locals")
+                    .ToList()
+                    .Select(t => t.Name)
+                    .ToList();
+
+                Application["Locales"] = localesAvailable;
+            } catch
+            {
+                Application["Locales"] = null;
             }
         }
 

@@ -15,8 +15,12 @@ namespace optitraffic.Classes
         {
             get
             {
+                List<String> localesList = (List<String>)HttpContext.Current.Application["Locales"];
+
                 HttpCookie langInfo = Request.Cookies["lang"];
-                if (null == langInfo)
+                if (null == langInfo ||
+                    null == localesList ||
+                    localesList.FindIndex(t => t == langInfo.Value) < 0)
                 {
                     langInfo = new HttpCookie("lang");
                     langInfo.Value = "en";
