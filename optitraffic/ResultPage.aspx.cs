@@ -38,15 +38,20 @@ namespace optitraffic
                                     .ToList();
 
             TmsData stationData = new TmsData();
-            List<TmsData> dataList = new List<TmsData>(this.LocalStations.Count);
+            List<TmsData> stationDataList = new List<TmsData>(this.LocalStations.Count);
+            FreeFlowSpeed ffsData = new FreeFlowSpeed();
+            List<FreeFlowSpeed> ffsDataList = new List<FreeFlowSpeed>(this.LocalStations.Count);
 
             foreach (TmsStation station in this.LocalStations)
             {
                 DataRetriever.GetTmsData(ref stationData, station.Id);
-                dataList.Add(stationData);
+                stationDataList.Add(stationData);
+
+                DataRetriever.GetFreeFlowSpeed(ref ffsData, station.Id);
+                ffsDataList.Add(ffsData);
             }
 
-            DataView data = new DataView(this.ReqLocationCode, dataList);
+            DataView data = new DataView(this.ReqLocationCode, stationDataList, ffsDataList);
 
 
             // DUMMY DATA HERE

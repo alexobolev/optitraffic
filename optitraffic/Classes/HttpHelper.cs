@@ -21,6 +21,16 @@ namespace optitraffic.Classes
         public static string TmsDataUrl = "https://tie.digitraffic.fi/api/v1/data/tms-data/";
 
         /// <summary>
+        /// URL address of DigiTraffic API endpoint for free flow speeds data.
+        /// </summary>
+        public static string FreeFlowSpeedsUrl = "https://tie.digitraffic.fi/api/v1/data/free-flow-speeds";
+
+        /// <summary>
+        /// URL address of DigiTraffic API endpoint for the free flow speeds data of a single station.
+        /// </summary>
+        public static string FreeFlowSpeedsIdUrl = "https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/";
+
+        /// <summary>
         /// Sends a GET request to the given URL.
         /// </summary>
         /// <param name="url">URL to retrieve</param>

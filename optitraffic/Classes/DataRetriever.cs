@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -120,6 +121,36 @@ namespace optitraffic.Classes
 
                 data = tmsData ?? throw new Exception();
 
+            } catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Gets the FFS of a specified station.
+        /// </summary>
+        /// <param name="freeFlowSpeed">Variable to write the FFS into</param>
+        /// <param name="stationCode">ID of the station</param>
+        /// <returns>True if all went well, false on error</returns>
+        public static bool GetFreeFlowSpeed(ref FreeFlowSpeed freeFlowSpeed, int stationCode)
+        {
+            try
+            {
+                string json = HttpHelper.Get(String.Format("{0}{1}", HttpHelper.FreeFlowSpeedsIdUrl, stationCode));
+                JObject jsonObj = JObject.Parse(json);
+
+                JToken freeFlowSpeed1Obj = jsonObj.SelectToken("$.tmsFreeFlowSpeeds[0].freeFlowSpeed1");
+                JToken freeFlowSpeed2Obj = jsonObj.SelectToken("$.tmsFreeFlowSpeeds[0].freeFlowSpeed2");
+
+                FreeFlowSpeed ffs = new FreeFlowSpeed(stationCode);
+                
+                ffs.Direction1 = int.Parse((string)freeFlowSpeed1Obj);
+                ffs.Direction2 = int.Parse((string)freeFlowSpeed2Obj);
+
+                freeFlowSpeed = ffs;
             } catch (Exception ex)
             {
                 return false;

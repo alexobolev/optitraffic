@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Classes\DataRetriever.cs" />
     <Compile Include="Classes\DataView.cs" />
+    <Compile Include="Classes\FreeFlowSpeed.cs" />
     <Compile Include="Classes\Municipality.cs" />
     <Compile Include="Classes\StringHelper.cs" />
     <Compile Include="Classes\TrafficLevel.cs" />

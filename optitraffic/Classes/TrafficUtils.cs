@@ -27,6 +27,13 @@ namespace optitraffic.Classes
                 return TrafficLevel.TakeBicycle;
         }
 
+        public static double CalculateLevelDouble(double freeFlowSpeed, double avgSpeed)
+        {
+            // Real calculation is yet to be designed or implemented.
+            Random rnd = new Random();
+            return rnd.NextDouble();
+        }
+
         public static string DoubleToColor(double val)
         {
             string[] colors = { "#00F65A", "#00F65A", "#ffa100", "#f44336", "#4a148c" };

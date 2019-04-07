@@ -14,18 +14,22 @@ namespace optitraffic.Classes
         public double AvgSpeed { get; set; }
         public double AvgSpeedRecent { get; set; }
 
+        public double Level { get; }
+
+
         public DataView() : this(-1) { }
         public DataView(int id)
         {
             this.LocationId = id;
         }
 
-        public DataView(int id, List<TmsData> dataList) : this(id)
+        public DataView(int id, List<TmsData> dataList, List<FreeFlowSpeed> ffsList) : this(id)
         {
             int srcCount = dataList.Count;
 
             int vehiclesPerHour_ = 0, vehiclesPerHourRecent_ = 0;
             double avgSpeed_ = 0, avgSpeedRecent_ = 0;
+            double trafficLevelDbl = 0.0;
 
             foreach (TmsData data in dataList)
             {
@@ -36,6 +40,11 @@ namespace optitraffic.Classes
                 avgSpeedRecent_ += data.AvgSpeed5MinDirection1 + data.AvgSpeed5MinDirection2;
             }
 
+            foreach (FreeFlowSpeed ffs in ffsList)
+                trafficLevelDbl += TrafficUtils.CalculateLevelDouble(ffs.Total, this.AvgSpeed);
+
+            trafficLevelDbl /= (ffsList.Count > 0 ? ffsList.Count : 1);
+
             // Average speed across all sensors is calculated as an arithmetic average.
             // Not the most precise approach probably, but good as an estimation value.
             this.AvgSpeed = (double)avgSpeed_ / (2 * srcCount);
@@ -43,6 +52,8 @@ namespace optitraffic.Classes
 
             this.VehiclesPerHour = vehiclesPerHour_;
             this.VehiclesPerHourRecent = vehiclesPerHourRecent_;
+
+            this.Level = trafficLevelDbl;
         }
     }
 }
