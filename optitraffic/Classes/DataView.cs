@@ -32,7 +32,7 @@ namespace optitraffic.Classes
 
         public DataView(int id, List<TmsData> dataList, List<FreeFlowSpeed> ffsList) : this(id)
         {
-            int srcCount = dataList.Count;
+            int tmsDataCount = dataList.Count;
 
             int vehiclesPerHour_ = 0, vehiclesPerHourRecent_ = 0;
             double avgSpeed_ = 0, avgSpeedRecent_ = 0;
@@ -49,12 +49,21 @@ namespace optitraffic.Classes
 
             // Average speed across all sensors is calculated as an arithmetic average.
             // Not the most precise approach probably, but good as an estimation value.
-            this.AvgSpeed = (double)avgSpeed_ / (2 * srcCount);
-            this.AvgSpeedRecent = (double)avgSpeedRecent_ / (2 * srcCount);
+            this.AvgSpeed = (double)avgSpeed_ / (2 * tmsDataCount);
+            this.AvgSpeedRecent = (double)avgSpeedRecent_ / (2 * tmsDataCount);
 
 
+            int ffsCount = ffsList.Count;
             foreach (FreeFlowSpeed ffs in ffsList)
+            {
+                if (ffs.Total == 0)
+                {
+                    ffsCount -= 1;
+                    continue;
+                }
+
                 trafficLevelDbl += TrafficUtils.CalculateLevelDouble(ffs.Total, this.AvgSpeed);
+            }
 
             trafficLevelDbl /= (ffsList.Count > 0 ? ffsList.Count : 1);
 

@@ -69,9 +69,6 @@
                                         // The data for our dataset
                                         data: {
                                             labels: [
-                                                '<%= LocaleRes.GetString("ChartPt0") %>',
-                                                '<%= LocaleRes.GetString("ChartPt1") %>',
-                                                '<%= LocaleRes.GetString("ChartPt2") %>',
                                                 '<%= LocaleRes.GetString("ChartPt3") %>',
                                                 '<%= LocaleRes.GetString("ChartPt4") %>'
                                             ],
@@ -79,8 +76,7 @@
                                                 label: '<%= LocaleRes.GetString("GenericMeasurementName") %>',
                                                 fill: false,
                                                 borderColor: '#534BAE',
-                                                data: <%= GetRandomMeasurementsStr(40, 100) %>
-                                                //data: [74, 63, 68, 80, 88]
+                                                data: <%= GetVehiclesMeasurementsStr() %>
                                             }]
                                         },
                                         options: {
@@ -115,8 +111,8 @@
                                                         labelString: 'Value'
                                                     },
                                                     ticks: {
-                                                        suggestedMin: 40,
-                                                        suggestedMax: 100,
+                                                        suggestedMin: <%= GetVehiclesMinBound() %>,
+                                                        suggestedMax: <%= GetVehiclesMaxBound() %>,
                                                     }
                                                 }]
                                             }
@@ -147,9 +143,6 @@
 
                                         data: {
                                             labels: [
-                                                '<%= LocaleRes.GetString("ChartPt0") %>',
-                                                '<%= LocaleRes.GetString("ChartPt1") %>',
-                                                '<%= LocaleRes.GetString("ChartPt2") %>',
                                                 '<%= LocaleRes.GetString("ChartPt3") %>',
                                                 '<%= LocaleRes.GetString("ChartPt4") %>'
                                             ],
@@ -157,8 +150,7 @@
                                                 label: '<%= LocaleRes.GetString("AVGSPDMeasurementName") %>',
                                                 fill: false,
                                                 borderColor: '#FF6659',
-                                                data: <%= GetRandomMeasurementsStr(20, 50) %>
-                                                //data: [35, 39, 37, 40, 39]
+                                                data: <%= GetAvgSpeedMeasurementsStr() %>
                                             }]
                                         },
                                         options: {
@@ -193,8 +185,8 @@
                                                         labelString: 'Value'
                                                     },
                                                     ticks: {
-                                                        suggestedMin: 20,
-                                                        suggestedMax: 50,
+                                                        suggestedMin: <%= GetAvgSpeedMinBound() %>,
+                                                        suggestedMax: <%= GetAvgSpeedMaxBound() %>,
                                                     }
                                                 }]
                                             }

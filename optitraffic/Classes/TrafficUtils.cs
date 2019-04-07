@@ -31,6 +31,9 @@ namespace optitraffic.Classes
         {
             try
             {
+                if (freeFlowSpeed == 0.0)
+                    throw new Exception();
+
                 double lvl = (freeFlowSpeed * 1.1 / (freeFlowSpeed)) - ((avgSpeed - 5) / freeFlowSpeed);
 
                 if (lvl < 0)

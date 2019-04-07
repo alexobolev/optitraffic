@@ -93,29 +93,73 @@ namespace optitraffic
             return levelStrings[(int)this.Data.Level];
         }
 
-        public double GetRandomTraffic()
+        public string GetVehiclesMeasurementsStr()
         {
-            return rnd.NextDouble();
+            return String.Format(new System.Globalization.CultureInfo("en-US"), "[{0}, {1}]",
+                this.Data.VehiclesPerHour, this.Data.VehiclesPerHourRecent);
         }
 
-        public string GetRandomMeasurementsStr(int min, int max)
+        public string GetAvgSpeedMeasurementsStr()
         {
-            if (max < min)
-                throw new ArgumentException("min > max");
-
-            int[] measurements = new int[5];
-
-            measurements[0] = rnd.Next(min, max / 2);
-            measurements[1] = rnd.Next(measurements[0], measurements[0] + (max - min) / 2);
-            measurements[2] = rnd.Next(min, max);
-            measurements[3] = rnd.Next(measurements[1], measurements[1] + (max - min) / 2);
-            measurements[4] = rnd.Next(min, max);
-
-            string measurementsStr = String.Format("[{0}, {1}, {2}, {3}, {4}]",
-                measurements[0], measurements[1], measurements[2], measurements[3], measurements[4]);
-
-
-            return measurementsStr;
+            return String.Format(new System.Globalization.CultureInfo("en-US"), "[{0}, {1}]",
+                this.Data.AvgSpeed, this.Data.AvgSpeedRecent);
         }
+
+        public int GetVehiclesMinBound()
+        {
+            int bound = 0;
+            double decBound = Math.Min(this.Data.VehiclesPerHour, this.Data.VehiclesPerHourRecent);
+            bound = Convert.ToInt32(Math.Ceiling(decBound * 0.98));
+            return bound;
+        }
+
+        public int GetVehiclesMaxBound()
+        {
+            int bound = 100000;
+            double decBound = Math.Max(this.Data.VehiclesPerHour, this.Data.VehiclesPerHourRecent);
+            bound = Convert.ToInt32(Math.Ceiling(decBound * 1.02));
+            return bound;
+        }
+
+        public int GetAvgSpeedMinBound()
+        {
+            int bound = 0;
+            double decBound = Math.Min(this.Data.AvgSpeed, this.Data.AvgSpeedRecent);
+            bound = Convert.ToInt32(Math.Ceiling(decBound * 0.98));
+            return bound;
+        }
+
+        public int GetAvgSpeedMaxBound()
+        {
+            int bound = 120;
+            double decBound = Math.Max(this.Data.AvgSpeed, this.Data.AvgSpeedRecent);
+            bound = Convert.ToInt32(Math.Ceiling(decBound * 1.02));
+            return bound;
+        }
+
+        //public double GetRandomTraffic()
+        //{
+        //    return rnd.NextDouble();
+        //}
+
+        //public string GetRandomMeasurementsStr(int min, int max)
+        //{
+        //    if (max < min)
+        //        throw new ArgumentException("min > max");
+
+        //    int[] measurements = new int[5];
+
+        //    measurements[0] = rnd.Next(min, max / 2);
+        //    measurements[1] = rnd.Next(measurements[0], measurements[0] + (max - min) / 2);
+        //    measurements[2] = rnd.Next(min, max);
+        //    measurements[3] = rnd.Next(measurements[1], measurements[1] + (max - min) / 2);
+        //    measurements[4] = rnd.Next(min, max);
+
+        //    string measurementsStr = String.Format("[{0}, {1}, {2}, {3}, {4}]",
+        //        measurements[0], measurements[1], measurements[2], measurements[3], measurements[4]);
+
+
+        //    return measurementsStr;
+        //}
     }
 }
