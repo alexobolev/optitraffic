@@ -119,25 +119,27 @@
   </resheader>
   <data name="AVGSPDMeasurementDesc" xml:space="preserve">
     <value>Local average speed indicates how safe it is to disregard pedestrian crossings. Life just isn't long enough to spend time looking for them.</value>
-    <comment>Something sane is welcome</comment>
   </data>
   <data name="AVGSPDMeasurementName" xml:space="preserve">
     <value>Average speed</value>
   </data>
   <data name="ChartPt0" xml:space="preserve">
     <value>L. year</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt1" xml:space="preserve">
     <value>L. month</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt2" xml:space="preserve">
     <value>Yesterday</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt3" xml:space="preserve">
-    <value>-1 hour</value>
+    <value>Last hour</value>
   </data>
   <data name="ChartPt4" xml:space="preserve">
-    <value>-5 mins</value>
+    <value>Last 5 mins</value>
   </data>
   <data name="ChooseLang" xml:space="preserve">
     <value>Choose language</value>
@@ -159,14 +161,14 @@
   </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>OptiTraffic</value>
-    <comment>Leave as is</comment>
   </data>
   <data name="SVIMeasurementDesc" xml:space="preserve">
     <value>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</value>
-    <comment>Something sane is welcome</comment>
+    <comment>REMOVE</comment>
   </data>
   <data name="SVIMeasurementName" xml:space="preserve">
     <value>Some very important measurement</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="TrafficLvl0" xml:space="preserve">
     <value>No traffic</value>
@@ -182,18 +184,40 @@
   </data>
   <data name="TrafficLvl4" xml:space="preserve">
     <value>Take a bloody bicycle</value>
-    <comment>To change</comment>
   </data>
   <data name="UserPrompt" xml:space="preserve">
     <value>What's the traffic load in...</value>
   </data>
   <data name="ErrDataIncorrect" xml:space="preserve">
     <value>Either location name or code are incorrect.</value>
+    <comment>CHANGE</comment>
   </data>
   <data name="ErrDataMissing" xml:space="preserve">
     <value>Either location name or code are missing.</value>
+    <comment>CHANGE</comment>
   </data>
   <data name="ErrGeneric" xml:space="preserve">
     <value>Bad request, please try again!</value>
+  </data>
+  <data name="TRFVLMMeasurementDesc" xml:space="preserve">
+    <value>Traffic volume indicates the number of vehicles passing through the roads. It allows to estimate the road load and general amount of traffic in the area.</value>
+  </data>
+  <data name="TRFVLMMeasurementName" xml:space="preserve">
+    <value>Traffic volume</value>
+  </data>
+  <data name="AVGSPDMeasurementUnit" xml:space="preserve">
+    <value>km / h</value>
+  </data>
+  <data name="ErrReason" xml:space="preserve">
+    <value>Error reason</value>
+  </data>
+  <data name="SearchHintMinLength" xml:space="preserve">
+    <value>Hints appear after 2 characters...</value>
+  </data>
+  <data name="SearchHintsInitError" xml:space="preserve">
+    <value>Failed to load data, hints won't appear...</value>
+  </data>
+  <data name="TRFVLMMeasurementUnit" xml:space="preserve">
+    <value>cars / h</value>
   </data>
 </root>

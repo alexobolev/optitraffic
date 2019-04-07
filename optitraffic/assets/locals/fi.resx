@@ -119,25 +119,29 @@
   </resheader>
   <data name="AVGSPDMeasurementDesc" xml:space="preserve">
     <value>Tekstiä keskinopeudesta ja kuinka kaavio sen näyttää.</value>
-    <comment>Something sane is welcome</comment>
   </data>
   <data name="AVGSPDMeasurementName" xml:space="preserve">
     <value>Keskinopeus</value>
   </data>
   <data name="ChartPt0" xml:space="preserve">
     <value>Edellinen vuosi</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt1" xml:space="preserve">
     <value>Edellinen kuukausi</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt2" xml:space="preserve">
     <value>Eilen</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="ChartPt3" xml:space="preserve">
-    <value>-1 tunti</value>
+    <value>Last hour</value>
+    <comment>TRANSLATE</comment>
   </data>
   <data name="ChartPt4" xml:space="preserve">
-    <value>-5 minuuttia</value>
+    <value>Last 5 mins</value>
+    <comment>TRANSLATE</comment>
   </data>
   <data name="ChooseLang" xml:space="preserve">
     <value>Valitse kieli</value>
@@ -157,18 +161,17 @@
   </data>
   <data name="SearchBoxPlaceholder" xml:space="preserve">
     <value>Kirjoita sijainti</value>
-    <comment>Search for a location...</comment>
   </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>OptiTraffic</value>
-    <comment>Leave as is</comment>
   </data>
   <data name="SVIMeasurementDesc" xml:space="preserve">
     <value>Kaavio alueen liikennetilanteesta ja tietoa kaaviosta. </value>
-    <comment>Some very important measurement is very important because everybody uses it. Seriously, how can't they? It's just SO convenient!</comment>
+    <comment>REMOVE</comment>
   </data>
   <data name="SVIMeasurementName" xml:space="preserve">
     <value>Liikennetilanne</value>
+    <comment>REMOVE</comment>
   </data>
   <data name="TrafficLvl0" xml:space="preserve">
     <value>Ei liikennettä</value>
@@ -184,19 +187,47 @@
   </data>
   <data name="TrafficLvl4" xml:space="preserve">
     <value>Liikenne ruuhka</value>
-    <comment>To change</comment>
   </data>
   <data name="UserPrompt" xml:space="preserve">
     <value>Tarkista liikennetilanne..</value>
+    <comment>TRANSLATE</comment>
   </data>
   <data name="ErrDataIncorrect" xml:space="preserve">
     <value>Virheellinen paikkakunnan nimi</value>
+    <comment>CHANGE</comment>
   </data>
   <data name="ErrDataMissing" xml:space="preserve">
     <value>Kirjoita paikkakunta</value>
+    <comment>CHANGE</comment>
   </data>
   <data name="ErrGeneric" xml:space="preserve">
     <value>Tapahtui virhe, yritä uudestaan!</value>
-    <comment>Tapahtui virhe, yrit </comment>
+  </data>
+  <data name="TRFVLMMeasurementDesc" xml:space="preserve">
+    <value>Traffic volume indicates the number of vehicles passing through the roads. It allows to estimate the road load and general amount of traffic in the area.</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="TRFVLMMeasurementName" xml:space="preserve">
+    <value>Traffic volume</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="AVGSPDMeasurementUnit" xml:space="preserve">
+    <value>km / h</value>
+  </data>
+  <data name="ErrReason" xml:space="preserve">
+    <value>Error reason</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="SearchHintMinLength" xml:space="preserve">
+    <value>Hints appear after 2 characters...</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="SearchHintsInitError" xml:space="preserve">
+    <value>Failed to load data, hints won't appear...</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="TRFVLMMeasurementUnit" xml:space="preserve">
+    <value>cars / h</value>
+    <comment>TRANSLATE</comment>
   </data>
 </root>

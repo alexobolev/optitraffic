@@ -59,9 +59,9 @@
                                     <span>
                                         <% if (!(bool)Application["InitialLoadFailed"])
                                            { %>
-                                        Hints appear after 2 characters...
+                                        <%= LocaleRes.GetString("SearchHintMinLength") %>
                                         <% } else {%> 
-                                        Failed to load data, hints won't appear...
+                                        <%= LocaleRes.GetString("SearchHintsInitError") %>
                                         <% } %>
                                     </span>
                                 </div>

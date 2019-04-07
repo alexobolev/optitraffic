@@ -79,6 +79,15 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to km / h.
+        /// </summary>
+        internal static string AVGSPDMeasurementUnit {
+            get {
+                return ResourceManager.GetString("AVGSPDMeasurementUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edellinen vuosi.
         /// </summary>
         internal static string ChartPt0 {
@@ -106,7 +115,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -1 tunti.
+        ///   Looks up a localized string similar to Last hour.
         /// </summary>
         internal static string ChartPt3 {
             get {
@@ -115,7 +124,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -5 minuuttia.
+        ///   Looks up a localized string similar to Last 5 mins.
         /// </summary>
         internal static string ChartPt4 {
             get {
@@ -156,6 +165,15 @@ namespace optitraffic.assets.locals {
         internal static string ErrGeneric {
             get {
                 return ResourceManager.GetString("ErrGeneric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error reason.
+        /// </summary>
+        internal static string ErrReason {
+            get {
+                return ResourceManager.GetString("ErrReason", resourceCulture);
             }
         }
         
@@ -201,6 +219,24 @@ namespace optitraffic.assets.locals {
         internal static string SearchBoxPlaceholder {
             get {
                 return ResourceManager.GetString("SearchBoxPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hints appear after 2 characters....
+        /// </summary>
+        internal static string SearchHintMinLength {
+            get {
+                return ResourceManager.GetString("SearchHintMinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to load data, hints won&apos;t appear....
+        /// </summary>
+        internal static string SearchHintsInitError {
+            get {
+                return ResourceManager.GetString("SearchHintsInitError", resourceCulture);
             }
         }
         
@@ -273,6 +309,33 @@ namespace optitraffic.assets.locals {
         internal static string TrafficLvl4 {
             get {
                 return ResourceManager.GetString("TrafficLvl4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traffic volume indicates the number of vehicles passing through the roads. It allows to estimate the road load and general amount of traffic in the area..
+        /// </summary>
+        internal static string TRFVLMMeasurementDesc {
+            get {
+                return ResourceManager.GetString("TRFVLMMeasurementDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traffic volume.
+        /// </summary>
+        internal static string TRFVLMMeasurementName {
+            get {
+                return ResourceManager.GetString("TRFVLMMeasurementName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cars / h.
+        /// </summary>
+        internal static string TRFVLMMeasurementUnit {
+            get {
+                return ResourceManager.GetString("TRFVLMMeasurementUnit", resourceCulture);
             }
         }
         

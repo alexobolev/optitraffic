@@ -55,14 +55,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Some very important measurement chart -->
+                        <!-- Traffic volume chart -->
                         <div class="row charts">
                             <div class="col-sm-12 col-md-8 col-lg-8">
                                 <div class="chart">
-                                    <canvas id="SomeVeryImportantChart" class="chart-body"></canvas>
+                                    <canvas id="TrafficVolumeChart" class="chart-body"></canvas>
                                 </div>
                                 <script>
-                                    var ctx = document.getElementById('SomeVeryImportantChart').getContext('2d');
+                                    var ctx = document.getElementById('TrafficVolumeChart').getContext('2d');
                                     var myChart = new Chart(ctx, {
                                         type: 'line',
 
@@ -73,7 +73,7 @@
                                                 '<%= LocaleRes.GetString("ChartPt4") %>'
                                             ],
                                             datasets: [{
-                                                label: '<%= LocaleRes.GetString("GenericMeasurementName") %>',
+                                                label: '<%= LocaleRes.GetString("TRFVLMMeasurementName") %>',
                                                 fill: false,
                                                 borderColor: '#534BAE',
                                                 data: <%= GetVehiclesMeasurementsStr() %>
@@ -85,7 +85,7 @@
                                             aspectRatio: 1.5,
                                             title: {
                                                 display: true,
-                                                text: '<%= LocaleRes.GetString("SVIMeasurementName") %>'
+                                                text: '<%= LocaleRes.GetString("TRFVLMMeasurementName") %> (<%= LocaleRes.GetString("TRFVLMMeasurementUnit") %>)'
                                             },
                                             legend: {
                                                 display: false,
@@ -121,8 +121,7 @@
                                 </script>
                             </div>
                             <div class="textarea col-sm-12 col-md-4 col-lg-4">
-                                <p><%= LocaleRes.GetString("SVIMeasurementDesc") %></p>
-                                <p>Usually, the very important measurement in this municipality is high, but it has seen some additional rise lately.</p>
+                                <p><%= LocaleRes.GetString("TRFVLMMeasurementDesc") %></p>
                             </div>
                         </div>
 
@@ -130,7 +129,6 @@
                         <div class="row charts">
                             <div class="textarea col-sm-12 col-md-4 col-lg-4">
                                 <p><%= LocaleRes.GetString("AVGSPDMeasurementDesc") %></p>
-                                <p>Usually, the local average speed in this municipality is high, but it has seen some additional rise lately.</p>
                             </div>
                             <div class="col-sm-12 col-md-8 col-lg-8">
                                 <div class="chart">
@@ -159,7 +157,7 @@
                                             aspectRatio: 1.5,
                                             title: {
                                                 display: true,
-                                                text: '<%= LocaleRes.GetString("AVGSPDMeasurementName") %>'
+                                                text: '<%= LocaleRes.GetString("AVGSPDMeasurementName") %> (<%= LocaleRes.GetString("AVGSPDMeasurementUnit") %>)'
                                             },
                                             legend: {
                                                 display: false,
@@ -204,7 +202,7 @@
                     <div class="col-lg-12">
                         <div class="alert alert-danger" role="alert">
                             <%= LocaleRes.GetString("ErrGeneric") %> <% if (ErrorReason.Length != 0)
-                                                               { %> <br />Error reason: <%= ErrorReason %> <% } %>
+                                                               { %> <br /><%= LocaleRes.GetString("ErrReason") %>: <%= ErrorReason %> <% } %>
                         </div>
                     </div>
                 </div>
