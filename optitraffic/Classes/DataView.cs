@@ -40,15 +40,17 @@ namespace optitraffic.Classes
                 avgSpeedRecent_ += data.AvgSpeed5MinDirection1 + data.AvgSpeed5MinDirection2;
             }
 
+            // Average speed across all sensors is calculated as an arithmetic average.
+            // Not the most precise approach probably, but good as an estimation value.
+            this.AvgSpeed = (double)avgSpeed_ / (2 * srcCount);
+            this.AvgSpeedRecent = (double)avgSpeedRecent_ / (2 * srcCount);
+
+
             foreach (FreeFlowSpeed ffs in ffsList)
                 trafficLevelDbl += TrafficUtils.CalculateLevelDouble(ffs.Total, this.AvgSpeed);
 
             trafficLevelDbl /= (ffsList.Count > 0 ? ffsList.Count : 1);
 
-            // Average speed across all sensors is calculated as an arithmetic average.
-            // Not the most precise approach probably, but good as an estimation value.
-            this.AvgSpeed = (double)avgSpeed_ / (2 * srcCount);
-            this.AvgSpeedRecent = (double)avgSpeedRecent_ / (2 * srcCount);
 
             this.VehiclesPerHour = vehiclesPerHour_;
             this.VehiclesPerHourRecent = vehiclesPerHourRecent_;

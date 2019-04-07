@@ -29,9 +29,13 @@ namespace optitraffic.Classes
 
         public static double CalculateLevelDouble(double freeFlowSpeed, double avgSpeed)
         {
-            // Real calculation is yet to be designed or implemented.
-            Random rnd = new Random();
-            return rnd.NextDouble();
+            try
+            {
+                return (1.2 * freeFlowSpeed / (freeFlowSpeed + 2.5)) - avgSpeed / freeFlowSpeed;
+            } catch
+            {
+                return 0.0;
+            }
         }
 
         public static string DoubleToColor(double val)
