@@ -46,7 +46,6 @@
                         <div class="search-box">
                             <div class="input-group search-group" role="group">
                                 <asp:TextBox id="LocationName" class="form-control" placeholder="" name="LocationName" runat="server"></asp:TextBox>
-                                <asp:TextBox id="LocationCode" style="display: none; " name="LocationName" runat="server"></asp:TextBox>
                                 <span class="input-group-btn">
                                     <asp:LinkButton id="SubmitBtn" class="btn btn-default" type="submit" runat="server"><i class="fa fa-search"></i></asp:LinkButton>
                                 </span>

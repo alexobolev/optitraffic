@@ -1,11 +1,10 @@
 $(document).ready(function () {
 
     $(document).on("click", function (event) {
-        var attr = $(event.target).attr("data-code");
+        var attr = $(event.target).attr("data-name");
         var clickedOnHint = typeof attr !== typeof undefined && attr !== false;
 
         if (clickedOnHint) {
-            $("#LocationCode").val($(event.target).attr("data-code"));
             $("#LocationName").val($(event.target).attr("data-name"));
             $("#searchOptions").hide();
         } else if ($(event.target).attr("id") != "LocationName") {
@@ -14,7 +13,7 @@ $(document).ready(function () {
     });
 
     $("#SearchForm").on("submit", function (event) {
-        if ($("#LocationCode").val() == "") {
+        if ($("#LocationName").val() == "") {
             event.preventDefault();
         }
     });
@@ -72,8 +71,6 @@ $(document).ready(function () {
     });
 
     $("#LocationName").on("input", function (event) {
-        $("#LocationCode").val("");
-
         var inVal = $("#LocationName").val();
 
 
@@ -113,11 +110,10 @@ $(document).ready(function () {
                         selectableHints += 1;
 
                         $("#searchOptions>ul").append(
-                            '<li data-code="' + this.Code + '" data-name="' + this.Name + '">' + this.Name + '</li>'
+                            '<li data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
 
                         if (this.Name.toLowerCase() == $("#LocationName").val().toLowerCase()) {
-                            $("#LocationCode").val(this.Code);
                             $("#searchOptions").hide();
                         } else {
                             $("#searchOptions").show();
@@ -134,11 +130,4 @@ $(document).ready(function () {
             });
         }, 150);
     });
-
-    //$(document).on("click", ".search-results > ul > li", function (event) {
-    //    $("#LocationCode").val($(this).attr("data-code"));
-    //    $("#LocationName").val($(this).attr("data-name"));
-    //    $("#searchOptions").hide();
-    //});
-
 });

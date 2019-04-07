@@ -15,9 +15,6 @@ namespace optitraffic
     {
         protected Random rnd = new Random();
 
-        protected string ReqLocationName = null;
-        protected int ReqLocationCode = -1;
-
         protected List<TmsStation> LocalStations;
         protected DataView Data;
 
@@ -33,7 +30,7 @@ namespace optitraffic
             this.ParseRequestData();
 
             this.LocalStations = ((List<TmsStation>)HttpContext.Current.Application["TmsStations"])
-                                    .Where(o => o.MunicipalityCode == this.ReqLocationCode && o.MunicipalityCode != -1)
+                                    .Where(o => o.MunicipalityCode == this.Subject.Code && o.MunicipalityCode != -1)
                                     .ToList();
 
             TmsData stationData = new TmsData();
@@ -50,31 +47,24 @@ namespace optitraffic
                 ffsDataList.Add(ffsData);
             }
 
-            Data = new DataView(this.ReqLocationCode, stationDataList, ffsDataList);
+            Data = new DataView(this.Subject.Code, stationDataList, ffsDataList);
         }
 
         protected void ParseRequestData()
         {
             try
             {
-                this.ReqLocationName = this.Request["LocationName"];
-                this.ReqLocationCode = int.Parse(this.Request["LocationCode"]);
+                string locName = this.Request["LocationName"];
 
-                if (null == this.ReqLocationName ||
-                    -1 == this.ReqLocationCode)
+                if (null == locName)
                     throw new Exception();
 
-                this.Subject = new Municipality(
-                    ((List<Municipality>)HttpContext.Current.Application["Municipalities"])
-                        .Where(o => o.Code == this.ReqLocationCode)
-                        .ToList()
-                        .Single()
-                        .Name,
-                    this.ReqLocationCode
-                );
-
+                this.Subject = ((List<Municipality>)HttpContext.Current.Application["Municipalities"])
+                                    .Where(o => o.Name.ToLower() == locName.ToLower())
+                                    .ToList()
+                                    .Single();
             }
-            catch (Exception ex)
+            catch
             {
                 this.IncompleteData = true;
                 this.ErrorReason = this.LocaleRes.GetString("ErrDataIncorrect");
