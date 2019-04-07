@@ -13,19 +13,18 @@ namespace optitraffic
 {
     public partial class ResultPage : BasePage
     {
-        protected Municipality Subject;
-        protected TrafficLevel Level;
-        protected double LevelPercentage = 0;
-
-        protected bool IncompleteData = false;
-        protected string ErrorReason = "";
-
         protected Random rnd = new Random();
 
         protected string ReqLocationName = null;
         protected int ReqLocationCode = -1;
 
         protected List<TmsStation> LocalStations;
+        protected DataView Data;
+
+        protected Municipality Subject;
+
+        protected bool IncompleteData = false;
+        protected string ErrorReason = "";
 
 
         protected override void Page_Load(object sender, EventArgs e)
@@ -51,13 +50,7 @@ namespace optitraffic
                 ffsDataList.Add(ffsData);
             }
 
-            DataView data = new DataView(this.ReqLocationCode, stationDataList, ffsDataList);
-
-
-            // DUMMY DATA HERE
-            this.LevelPercentage = GetRandomTraffic();
-            this.Level = TrafficUtils.DoubleToLevel(this.LevelPercentage);
-            // END OF DUMMY DATA
+            Data = new DataView(this.ReqLocationCode, stationDataList, ffsDataList);
         }
 
         protected void ParseRequestData()
@@ -91,13 +84,13 @@ namespace optitraffic
 
         public string GetTrafficBarStyleString()
         {
-            return String.Format(new System.Globalization.CultureInfo("en-US"), "width: {0:F2}%; background-color: {1};", this.LevelPercentage * 100, TrafficUtils.DoubleToColor(this.LevelPercentage));
+            return String.Format(new System.Globalization.CultureInfo("en-US"), "width: {0:F2}%; background-color: {1};", this.Data.LevelDbl * 100, TrafficUtils.DoubleToColor(this.Data.LevelDbl));
         }
 
         public string GetTrafficLevelIdentifier()
         {
             string[] levelStrings = { "TrafficLvl0", "TrafficLvl1", "TrafficLvl2", "TrafficLvl3", "TrafficLvl4" };
-            return levelStrings[(int)this.Level];
+            return levelStrings[(int)this.Data.Level];
         }
 
         public double GetRandomTraffic()

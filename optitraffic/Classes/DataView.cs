@@ -14,7 +14,14 @@ namespace optitraffic.Classes
         public double AvgSpeed { get; set; }
         public double AvgSpeedRecent { get; set; }
 
-        public double Level { get; }
+        public double LevelDbl { get; }
+        public TrafficLevel Level
+        {
+            get
+            {
+                return TrafficUtils.DoubleToLevel(this.LevelDbl);
+            }
+        }
 
 
         public DataView() : this(-1) { }
@@ -55,7 +62,7 @@ namespace optitraffic.Classes
             this.VehiclesPerHour = vehiclesPerHour_;
             this.VehiclesPerHourRecent = vehiclesPerHourRecent_;
 
-            this.Level = trafficLevelDbl;
+            this.LevelDbl = trafficLevelDbl;
         }
     }
 }

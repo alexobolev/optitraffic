@@ -31,7 +31,12 @@ namespace optitraffic.Classes
         {
             try
             {
-                return (1.2 * freeFlowSpeed / (freeFlowSpeed + 2.5)) - avgSpeed / freeFlowSpeed;
+                double lvl = (freeFlowSpeed * 1.1 / (freeFlowSpeed)) - ((avgSpeed - 5) / freeFlowSpeed);
+
+                if (lvl < 0)
+                    lvl = 0.0;
+
+                return lvl;
             } catch
             {
                 return 0.0;
