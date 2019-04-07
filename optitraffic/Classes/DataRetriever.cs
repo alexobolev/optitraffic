@@ -58,5 +58,74 @@ namespace optitraffic.Classes
 
             return true;
         }
+
+        /// <summary>
+        /// Gets a single TMS data by the station ID.
+        /// </summary>
+        /// <param name="data">TmsData instances to write into</param>
+        /// <returns>True if all went well, false on error</returns>
+        public static bool GetTmsData(ref TmsData data, int stationCode)
+        {
+            try
+            {
+                string dataJson = HttpHelper.Get(String.Format("{0}{1}", HttpHelper.TmsDataUrl, stationCode));
+                JObject dataJsonObj = JObject.Parse(dataJson);
+
+                TmsData tmsData = new TmsData(stationCode);
+                //int overridesHourDir1_, overridesHourDir2_, overridesMinsDir1_, overridesMinsDir2_;
+                //int avgSpeedHourDir1_, avgSpeedHourDir2_, avgSpeedMinsDir1_, avgSpeedMinsDir2_;
+                int code, value;
+
+                IEnumerable<JToken> sensorValObjs = dataJsonObj.SelectTokens("$.tmsStations[*].sensorValues[*]");
+                foreach (JToken sensorValObj in sensorValObjs)
+                {
+                    if (!int.TryParse((string)sensorValObj.SelectToken("id"), out code))
+                        continue;
+
+                    if (!int.TryParse((string)sensorValObj.SelectToken("sensorValue"), out value))
+                        continue;
+
+                    switch (code)
+                    {
+                        case 5054:
+                            tmsData.OverridesHourDirection1 = value;
+                            break;
+                        case 5055:
+                            tmsData.OverridesHourDirection2 = value;
+                            break;
+                        case 5056:
+                            tmsData.AvgSpeedHourDirection1 = value;
+                            break;
+                        case 5057:
+                            tmsData.AvgSpeedHourDirection2 = value;
+                            break;
+
+                        case 5116:
+                            tmsData.Overrides5MinDirection1 = value;
+                            break;
+                        case 5119:
+                            tmsData.Overrides5MinDirection2 = value;
+                            break;
+                        case 5122:
+                            tmsData.AvgSpeed5MinDirection1 = value;
+                            break;
+                        case 5125:
+                            tmsData.AvgSpeed5MinDirection2 = value;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                data = tmsData ?? throw new Exception();
+
+            } catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

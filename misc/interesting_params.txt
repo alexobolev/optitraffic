@@ -1,0 +1,11 @@
+5054   OHITUKSET_60MIN_KIINTEA_SUUNTA1               Overrides 60min fixed direction 1
+5055   OHITUKSET_60MIN_KIINTEA_SUUNTA2               Overrides 60min fixed direction 2
+
+5056   KESKINOPEUS_60MIN_KIINTEA_SUUNTA1             Avg speed 60min fixed direction 1
+5057   KESKINOPEUS_60MIN_KIINTEA_SUUNTA2             Avg speed 60min fixed direction 2
+
+5116   OHITUKSET_5MIN_LIUKUVA_SUUNTA1                Overrides 5min sliding direction 1
+5119   OHITUKSET_5MIN_LIUKUVA_SUUNTA2                Overrides 5min sliding direction 2
+
+5122   KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1              Avg speed 5min sliding direction 1
+5125   KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2              Avg speed 5min sliding direction 2

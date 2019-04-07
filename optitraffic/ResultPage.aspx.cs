@@ -25,11 +25,35 @@ namespace optitraffic
         protected string ReqLocationName = null;
         protected int ReqLocationCode = -1;
 
+        protected List<TmsStation> LocalStations;
+
 
         protected override void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
+            this.ParseRequestData();
 
+            this.LocalStations = ((List<TmsStation>)HttpContext.Current.Application["TmsStations"])
+                                    .Where(o => o.MunicipalityCode == this.ReqLocationCode && o.MunicipalityCode != -1)
+                                    .ToList();
+
+            TmsData data = new TmsData();
+            List<TmsData> dataList = new List<TmsData>(this.LocalStations.Count);
+
+            foreach (TmsStation station in this.LocalStations)
+            {
+                DataRetriever.GetTmsData(ref data, station.Id);
+                dataList.Add(data);
+            }
+
+            // DUMMY DATA HERE
+            this.LevelPercentage = GetRandomTraffic();
+            this.Level = TrafficUtils.DoubleToLevel(this.LevelPercentage);
+            // END OF DUMMY DATA
+        }
+
+        protected void ParseRequestData()
+        {
             try
             {
                 this.ReqLocationName = this.Request["LocationName"];
@@ -55,11 +79,6 @@ namespace optitraffic
                 this.ErrorReason = this.LocaleRes.GetString("ErrDataIncorrect");
                 this.Subject = new Municipality("Lahti", 398);
             }
-
-            // DUMMY DATA HERE
-            this.LevelPercentage = GetRandomTraffic();
-            this.Level = TrafficUtils.DoubleToLevel(this.LevelPercentage);
-            // END OF DUMMY DATA
         }
 
         public string GetTrafficBarStyleString()
