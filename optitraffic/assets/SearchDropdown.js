@@ -86,7 +86,7 @@ $(document).ready(function () {
             return;
         }
 
-        $("#searchOptions>ul").empty();
+        //$("#searchOptions>ul").empty();
 
         setTimeout(function () {
             event.stopImmediatePropagation();
