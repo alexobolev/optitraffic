@@ -28,6 +28,21 @@
     <![endif]-->
 </head>
 <body>
+    <!--[if IE]>
+        <div id="IEAlert" class="ie-alert alert bg-danger alert-dismissable">
+            <button id="CloseIEAlert" type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>What is dead cannot die</h2>
+                        <p>Beware, you are using Internet Explorer. This browser is outdated and deprecated (<a href="https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732">officially</a>).</p>
+                        <p>We strongly encourage you to use something of this century. This application does not fully support Internet Explorer.</p>
+                        <p>Some features might not work or, in exceptional cases, will work but feel very laggy and unresponsive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <![endif]-->
     <div class="wrapper">
         <header class="navbar navbar-inverse navbar-fixed-top navbar-themed">
             <div class="container-fluid">
