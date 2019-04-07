@@ -37,14 +37,17 @@ namespace optitraffic
                                     .Where(o => o.MunicipalityCode == this.ReqLocationCode && o.MunicipalityCode != -1)
                                     .ToList();
 
-            TmsData data = new TmsData();
+            TmsData stationData = new TmsData();
             List<TmsData> dataList = new List<TmsData>(this.LocalStations.Count);
 
             foreach (TmsStation station in this.LocalStations)
             {
-                DataRetriever.GetTmsData(ref data, station.Id);
-                dataList.Add(data);
+                DataRetriever.GetTmsData(ref stationData, station.Id);
+                dataList.Add(stationData);
             }
+
+            DataView data = new DataView(this.ReqLocationCode, dataList);
+
 
             // DUMMY DATA HERE
             this.LevelPercentage = GetRandomTraffic();
