@@ -61,7 +61,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tekstiä keskinopeudesta ja kuinka kaavio sen näyttää..
+        ///   Looks up a localized string similar to Tästä näet keskinopeuden mittausasemien välillä..
         /// </summary>
         internal static string AVGSPDMeasurementDesc {
             get {
@@ -115,7 +115,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last hour.
+        ///   Looks up a localized string similar to Viime tunti.
         /// </summary>
         internal static string ChartPt3 {
             get {
@@ -124,7 +124,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last 5 mins.
+        ///   Looks up a localized string similar to Viimeiset 5 minuuttia.
         /// </summary>
         internal static string ChartPt4 {
             get {
@@ -169,7 +169,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error reason.
+        ///   Looks up a localized string similar to Virheen syy.
         /// </summary>
         internal static string ErrReason {
             get {
@@ -223,7 +223,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hints appear after 2 characters....
+        ///   Looks up a localized string similar to Vaihtoehdot näkyvät kahden merkin jälkeen.
         /// </summary>
         internal static string SearchHintMinLength {
             get {
@@ -232,7 +232,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to load data, hints won&apos;t appear....
+        ///   Looks up a localized string similar to Virhe tietoja haettaessa.
         /// </summary>
         internal static string SearchHintsInitError {
             get {
@@ -313,7 +313,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Traffic volume indicates the number of vehicles passing through the roads. It allows to estimate the road load and general amount of traffic in the area..
+        ///   Looks up a localized string similar to Tämä grafiikka kertoo autojen määrän teillä. Se mahdollistaa teiden kuormituksen arvioinnin ja yleisen liikenteen määrän alueella..
         /// </summary>
         internal static string TRFVLMMeasurementDesc {
             get {
@@ -322,7 +322,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Traffic volume.
+        ///   Looks up a localized string similar to Liikenteen määrä.
         /// </summary>
         internal static string TRFVLMMeasurementName {
             get {
@@ -331,7 +331,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cars / h.
+        ///   Looks up a localized string similar to autoa / h.
         /// </summary>
         internal static string TRFVLMMeasurementUnit {
             get {
@@ -340,7 +340,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tarkista liikennetilanne...
+        ///   Looks up a localized string similar to Tarkista liikennetilanne....
         /// </summary>
         internal static string UserPrompt {
             get {
