@@ -26,6 +26,21 @@
     <![endif]-->
 </head>
 <body>
+    <!--[if IE]>
+        <div id="IEAlert" class="ie-alert alert bg-danger alert-dismissable">
+            <button id="CloseIEAlert" type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2><%= LocaleRes.GetString("IEAlertHeader") %></h2>
+                        <p><%= LocaleRes.GetString("IEAlertP1") %></p>
+                        <p><%= LocaleRes.GetString("IEAlertP2") %></p>
+                        <p><%= LocaleRes.GetString("IEAlertP3") %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <![endif]-->
     <div class="wrapper">
         <header class="navbar navbar-inverse navbar-fixed-top navbar-themed">
             <div class="container-fluid">

@@ -34,10 +34,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>What is dead cannot die</h2>
-                        <p>Beware, you are using Internet Explorer. This browser is outdated and deprecated (<a href="https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732">officially</a>).</p>
-                        <p>We strongly encourage you to use something of this century. This application does not fully support Internet Explorer.</p>
-                        <p>Some features might not work or, in exceptional cases, will work but feel very laggy and unresponsive.</p>
+                        <h2><%= LocaleRes.GetString("IEAlertHeader") %></h2>
+                        <p><%= LocaleRes.GetString("IEAlertP1") %></p>
+                        <p><%= LocaleRes.GetString("IEAlertP2") %></p>
+                        <p><%= LocaleRes.GetString("IEAlertP3") %></p>
                     </div>
                 </div>
             </div>

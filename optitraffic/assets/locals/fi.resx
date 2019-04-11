@@ -137,18 +137,15 @@
   </data>
   <data name="ChartPt3" xml:space="preserve">
     <value>Viime tunti</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="ChartPt4" xml:space="preserve">
     <value>Viimeiset 5 minuuttia</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="ChooseLang" xml:space="preserve">
     <value>Valitse kieli</value>
   </data>
   <data name="GenericMeasurementName" xml:space="preserve">
     <value>Kaavio</value>
-    <comment>Measurement; mitta mittaus, mittaaminen, arviointi (kaavio)</comment>
   </data>
   <data name="MobileNavToggle" xml:space="preserve">
     <value>Valikko</value>
@@ -190,7 +187,6 @@
   </data>
   <data name="UserPrompt" xml:space="preserve">
     <value>Tarkista liikennetilanne...</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="ErrDataIncorrect" xml:space="preserve">
     <value>Virheellinen paikkakunnan nimi</value>
@@ -205,29 +201,39 @@
   </data>
   <data name="TRFVLMMeasurementDesc" xml:space="preserve">
     <value>Tämä grafiikka kertoo autojen määrän teillä. Se mahdollistaa teiden kuormituksen arvioinnin ja yleisen liikenteen määrän alueella.</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="TRFVLMMeasurementName" xml:space="preserve">
     <value>Liikenteen määrä</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="AVGSPDMeasurementUnit" xml:space="preserve">
     <value>km / h</value>
   </data>
   <data name="ErrReason" xml:space="preserve">
     <value>Virheen syy</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="SearchHintMinLength" xml:space="preserve">
     <value>Vaihtoehdot näkyvät kahden merkin jälkeen</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="SearchHintsInitError" xml:space="preserve">
     <value>Virhe tietoja haettaessa</value>
-    <comment>TRANSLATE</comment>
   </data>
   <data name="TRFVLMMeasurementUnit" xml:space="preserve">
     <value>autoa / h</value>
+  </data>
+  <data name="IEAlertHeader" xml:space="preserve">
+    <value>What is dead cannot die</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="IEAlertP1" xml:space="preserve">
+    <value>Beware, you are using Internet Explorer. This browser is outdated and deprecated (&lt;a href="https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732"&gt;officially&lt;/a&gt;).</value>
+    <comment>TRANSLATE (mind the &lt;a&gt;&lt;/a&gt; tag!)</comment>
+  </data>
+  <data name="IEAlertP2" xml:space="preserve">
+    <value>We strongly encourage you to use something of this century. This application does not fully support Internet Explorer.</value>
+    <comment>TRANSLATE</comment>
+  </data>
+  <data name="IEAlertP3" xml:space="preserve">
+    <value>Some features might not work or, in exceptional cases, will work but feel very laggy and unresponsive.</value>
     <comment>TRANSLATE</comment>
   </data>
 </root>

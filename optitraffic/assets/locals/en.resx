@@ -220,4 +220,16 @@
   <data name="TRFVLMMeasurementUnit" xml:space="preserve">
     <value>cars / h</value>
   </data>
+  <data name="IEAlertHeader" xml:space="preserve">
+    <value>What is dead cannot die</value>
+  </data>
+  <data name="IEAlertP1" xml:space="preserve">
+    <value>Beware, you are using Internet Explorer. This browser is outdated and deprecated (&lt;a href="https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732"&gt;officially&lt;/a&gt;).</value>
+  </data>
+  <data name="IEAlertP2" xml:space="preserve">
+    <value>We strongly encourage you to use something of this century. This application does not fully support Internet Explorer.</value>
+  </data>
+  <data name="IEAlertP3" xml:space="preserve">
+    <value>Some features might not work or, in exceptional cases, will work but feel very laggy and unresponsive.</value>
+  </data>
 </root>

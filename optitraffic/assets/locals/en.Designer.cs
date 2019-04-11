@@ -187,6 +187,42 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What is dead cannot die.
+        /// </summary>
+        internal static string IEAlertHeader {
+            get {
+                return ResourceManager.GetString("IEAlertHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beware, you are using Internet Explorer. This browser is outdated and deprecated (&lt;a href=&quot;https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732&quot;&gt;officially&lt;/a&gt;)..
+        /// </summary>
+        internal static string IEAlertP1 {
+            get {
+                return ResourceManager.GetString("IEAlertP1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We strongly encourage you to use something of this century. This application does not fully support Internet Explorer..
+        /// </summary>
+        internal static string IEAlertP2 {
+            get {
+                return ResourceManager.GetString("IEAlertP2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some features might not work or, in exceptional cases, will work but feel very laggy and unresponsive..
+        /// </summary>
+        internal static string IEAlertP3 {
+            get {
+                return ResourceManager.GetString("IEAlertP3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toggle navigation.
         /// </summary>
         internal static string MobileNavToggle {
