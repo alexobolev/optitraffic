@@ -142,7 +142,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Either location name or code are incorrect..
+        ///   Looks up a localized string similar to Incorrect location data provided..
         /// </summary>
         internal static string ErrDataIncorrect {
             get {
@@ -151,7 +151,7 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Either location name or code are missing..
+        ///   Looks up a localized string similar to No location data provided..
         /// </summary>
         internal static string ErrDataMissing {
             get {

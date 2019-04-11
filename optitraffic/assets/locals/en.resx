@@ -189,11 +189,11 @@
     <value>What's the traffic load in...</value>
   </data>
   <data name="ErrDataIncorrect" xml:space="preserve">
-    <value>Either location name or code are incorrect.</value>
+    <value>Incorrect location data provided.</value>
     <comment>CHANGE</comment>
   </data>
   <data name="ErrDataMissing" xml:space="preserve">
-    <value>Either location name or code are missing.</value>
+    <value>No location data provided.</value>
     <comment>CHANGE</comment>
   </data>
   <data name="ErrGeneric" xml:space="preserve">
