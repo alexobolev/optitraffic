@@ -6,41 +6,52 @@ $(document).ready(function () {
     var maxHints = 7;
     var requestDelay = 150;
 
+    var hintsSelectionClass = "sel";
+
+    var SearchFormSelector = "#SearchForm";
+    var SearchInputSelector = "#LocationName";
+    var SearchDropdownSelector = "#searchOptions";
+    var SearchDropdownListSelector = "#searchOptions>ul";
+    var SearchDropdownItemsSelector = "#searchOptions>ul>li";
+    var SearchDropdownHintSelector = "#searchOptionsHint";
+
+
+
     $(document).on("click", function (event) {
         var dataNameAttr = $(event.target).attr("data-name");
 
         if (typeof dataNameAttr !== typeof undefined && dataNameAttr !== false) {
-            $("#LocationName").val(dataNameAttr);
-            $("#searchOptions").hide();
-        } else if ($(event.target).attr("id") != $("#LocationName").attr("id")) {
-            $("#searchOptions").hide();
+            $(SearchInputSelector).val(dataNameAttr);
+            $(SearchDropdownSelector).hide();
+        } else if ($(event.target).attr("id") != $(SearchInputSelector).attr("id")) {
+            $(SearchDropdownSelector).hide();
         }
     });
 
-    $("#SearchForm").on("submit", function (event) {
-        if ($("#LocationName").val() == "") {
+    $(SearchFormSelector).on("submit", function (event) {
+        if ($(SearchInputSelector).val() == "") {
             event.preventDefault();
         }
     });
 
-    $("#SearchForm").on("focusin", function (event) {
-        if ($("#LocationName").val().length > 0) {
-            $("#searchOptions").show();
+    $(SearchFormSelector).on("focusin", function (event) {
+        if ($(SearchInputSelector).val().length > 0) {
+            $(SearchDropdownSelector).show();
         }
     });
 
-    $("#LocationName").on("keydown", function (event) {
+    $(SearchInputSelector).on("keydown", function (event) {
         if (event.which == 13) {
 
             if (selectedHintIdx != -1) {
-                $("#searchOptions>ul>li").eq(selectedHintIdx).click();
+                $(SearchDropdownItemsSelector).eq(selectedHintIdx).click();
             }
 
             if (selectableHints == 1) {
-                $("#searchOptions>ul>li").eq(0).click();
+                $(SearchDropdownItemsSelector).eq(0).click();
             }
 
-            $("#SearchForm").submit();
+            $(SearchFormSelector).submit();
             return false;
         }
 
@@ -63,8 +74,8 @@ $(document).ready(function () {
                 }
             }
 
-            $("#searchOptions>ul>li").removeClass("sel");
-            $("#searchOptions>ul>li").eq(selectedHintIdx).addClass("sel");
+            $(SearchDropdownItemsSelector).removeClass(hintsSelectionClass);
+            $(SearchDropdownItemsSelector).eq(selectedHintIdx).addClass(hintsSelectionClass);
 
         } else {
             selectedHintIdx = -1;
@@ -72,16 +83,16 @@ $(document).ready(function () {
 
     });
 
-    $("#LocationName").on("input", function (event) {
-        var inVal = $("#LocationName").val();
+    $(SearchInputSelector).on("input", function (event) {
+        var inputText = $(SearchInputSelector).val();
 
 
-        $("#searchOptions").show();
+        $(SearchDropdownSelector).show();
 
-        if (inVal.length < 2) {
+        if (inputText.length < 2) {
             selectableHints = 0;
-            $("#searchOptions>ul").empty();
-            $("#searchOptionsHint").show();
+            $(SearchDropdownListSelector).empty();
+            $(SearchDropdownHintSelector).show();
             return;
         }
 
@@ -92,7 +103,7 @@ $(document).ready(function () {
                 type: "POST",
                 url: "FrontPage.aspx/GetMunicipalitiesByInput",
                 data: JSON.stringify({
-                    inputValue: $("#LocationName").val(),
+                    inputValue: $(SearchInputSelector).val(),
                     maxNum: maxHints
                 }),
                 dataType: "json",
@@ -101,22 +112,22 @@ $(document).ready(function () {
                     if (res.d == null)
                         return;
 
-                    $("#searchOptionsHint").hide();
-                    $("#searchOptions>ul").empty();
+                    $(SearchDropdownHintSelector).hide();
+                    $(SearchDropdownListSelector).empty();
 
                     selectableHints = 0;
 
                     $.each(res.d, function () {
                         selectableHints += 1;
 
-                        $("#searchOptions>ul").append(
+                        $(SearchDropdownListSelector).append(
                             '<li data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
 
-                        if (this.Name.toLowerCase() == $("#LocationName").val().toLowerCase()) {
-                            $("#searchOptions").hide();
+                        if (this.Name.toLowerCase() == $(SearchInputSelector).val().toLowerCase()) {
+                            $(SearchDropdownSelector).hide();
                         } else {
-                            $("#searchOptions").show();
+                            $(SearchDropdownSelector).show();
                         }
                     });
 
