@@ -7,9 +7,9 @@ namespace optitraffic.Classes
 {
     public static class TrafficUtils
     {
-        public const double NoTrafficThreshold = 0.15;
-        public const double LowTrafficThreshold = 0.3;
-        public const double MediumTrafficThreshold = 0.6;
+        public const double NoTrafficThreshold = 0.07;
+        public const double LowTrafficThreshold = 0.2;
+        public const double MediumTrafficThreshold = 0.45;
         public const double HighTrafficThreshold = 0.85;
 
 
