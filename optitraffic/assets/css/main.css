@@ -221,7 +221,18 @@ footer {
 
 .backlink-row {
     margin-top: 1.0em;
+    padding-bottom: 2.0em;
 }
+
+    .backlink-row .attribution {
+        display: block;
+        text-align: right;
+        color: rgba(0, 0, 0, 0.37);
+    }
+
+        .backlink-row .attribution > a {
+            color: #666ad1;
+        }
 
 .result {
     text-align: left;

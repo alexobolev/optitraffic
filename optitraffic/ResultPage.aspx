@@ -223,8 +223,11 @@
                 </div>
                 <% } %>
                 <div class="row backlink-row">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
                         <a href="FrontPage.aspx" class="back-btn"><i class="fa fa-chevron-left"></i><%= LocaleRes.GetString("ReturnToMainPage") %></a>
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <span class="attribution"><%= LocaleRes.GetString("DigiTrafficAttr") %></span>
                     </div>
                 </div>
             </div>

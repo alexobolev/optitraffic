@@ -142,6 +142,15 @@ namespace optitraffic.assets.locals {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source: Traffic Management Finland / &lt;a href=&quot;https://www.digitraffic.fi/en/road-traffic/&quot;&gt;digitraffic.fi&lt;/a&gt;, license CC 4.0 BY.
+        /// </summary>
+        internal static string DigiTrafficAttr {
+            get {
+                return ResourceManager.GetString("DigiTrafficAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incorrect location data provided..
         /// </summary>
         internal static string ErrDataIncorrect {
