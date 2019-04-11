@@ -1,13 +1,18 @@
 $(document).ready(function () {
 
-    $(document).on("click", function (event) {
-        var attr = $(event.target).attr("data-name");
-        var clickedOnHint = typeof attr !== typeof undefined && attr !== false;
+    var selectedHintIdx = -1;
+    var selectableHints = 0;
 
-        if (clickedOnHint) {
-            $("#LocationName").val($(event.target).attr("data-name"));
+    var maxHints = 7;
+    var requestDelay = 150;
+
+    $(document).on("click", function (event) {
+        var dataNameAttr = $(event.target).attr("data-name");
+
+        if (typeof dataNameAttr !== typeof undefined && dataNameAttr !== false) {
+            $("#LocationName").val(dataNameAttr);
             $("#searchOptions").hide();
-        } else if ($(event.target).attr("id") != "LocationName") {
+        } else if ($(event.target).attr("id") != $("#LocationName").attr("id")) {
             $("#searchOptions").hide();
         }
     });
@@ -23,10 +28,6 @@ $(document).ready(function () {
             $("#searchOptions").show();
         }
     });
-
-
-    var selectedHintIdx = -1;
-    var selectableHints = 0;
 
     $("#LocationName").on("keydown", function (event) {
         if (event.which == 13) {
@@ -92,7 +93,7 @@ $(document).ready(function () {
                 url: "FrontPage.aspx/GetMunicipalitiesByInput",
                 data: JSON.stringify({
                     inputValue: $("#LocationName").val(),
-                    maxNum: 7
+                    maxNum: maxHints
                 }),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
@@ -127,6 +128,6 @@ $(document).ready(function () {
                     console.log(res.d);
                 }
             });
-        }, 150);
+        }, requestDelay);
     });
 });
