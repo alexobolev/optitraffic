@@ -11,8 +11,8 @@ $(document).ready(function () {
     var SearchFormSelector = "#SearchForm";
     var SearchInputSelector = "#LocationName";
     var SearchDropdownSelector = "#searchOptions";
-    var SearchDropdownListSelector = "#searchOptions>ul";
-    var SearchDropdownItemsSelector = "#searchOptions>ul>li";
+    var SearchDropdownListSelector = SearchDropdownSelector + ">ul";
+    var SearchDropdownItemsSelector = SearchDropdownListSelector + ">li";
     var SearchDropdownHintSelector = "#searchOptionsHint";
 
 
