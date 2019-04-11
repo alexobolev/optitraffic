@@ -1,81 +1,85 @@
 $(document).ready(function () {
 
-    var selectedHintIdx = -1;
-    var selectableHints = 0;
+    var elementHasAttribute = function (elem, attrName) {
+        var attr = $(elem).attr(attrName);
+        return typeof attr !== typeof undefined && attr !== false;
+    }
 
-    var maxHints = 7;
+    var selectedHintIdx = -1;
+    var loadedHintsNum = 0;
+
+    var requestAddress = "FrontPage.aspx/GetMunicipalitiesByInput";
     var requestDelay = 150;
+    var requestMaxHints = 7;
 
     var hintsSelectionClass = "sel";
+    var hintsAttrName = "data-name";
 
-    var SearchFormSelector = "#SearchForm";
-    var SearchInputSelector = "#LocationName";
-    var SearchDropdownSelector = "#searchOptions";
-    var SearchDropdownListSelector = SearchDropdownSelector + ">ul";
-    var SearchDropdownItemsSelector = SearchDropdownListSelector + ">li";
-    var SearchDropdownHintSelector = "#searchOptionsHint";
+    var SearchForm = "#SearchForm";
+    var SearchInput = "#LocationName";
+    var SearchDropdown = "#searchOptions";
+    var SearchDropdownList = SearchDropdown + ">ul";
+    var SearchDropdownItems = SearchDropdownList + ">li";
+    var SearchDropdownHint = "#searchOptionsHint";
 
 
 
     $(document).on("click", function (event) {
-        var dataNameAttr = $(event.target).attr("data-name");
+        if (elementHasAttribute($(event.target), hintsAttrName)) {
 
-        if (typeof dataNameAttr !== typeof undefined && dataNameAttr !== false) {
-            $(SearchInputSelector).val(dataNameAttr);
-            $(SearchDropdownSelector).hide();
-        } else if ($(event.target).attr("id") != $(SearchInputSelector).attr("id")) {
-            $(SearchDropdownSelector).hide();
+            $(SearchInput).val($(event.target).attr(hintsAttrName));
+            $(SearchDropdown).hide();
+
+        } else if ($(event.target).attr("id") != $(SearchInput).attr("id")) {
+            $(SearchDropdown).hide();
         }
     });
 
-    $(SearchFormSelector).on("submit", function (event) {
-        if ($(SearchInputSelector).val() == "") {
+    $(SearchForm).on("submit", function (event) {
+        if ($(SearchInput).val().trim().length == 0)
             event.preventDefault();
-        }
     });
 
-    $(SearchFormSelector).on("focusin", function (event) {
-        if ($(SearchInputSelector).val().length > 0) {
-            $(SearchDropdownSelector).show();
-        }
+    $(SearchForm).on("focusin", function (event) {
+        if ($(SearchInput).val().length > 0)
+            $(SearchDropdown).show();
     });
 
-    $(SearchInputSelector).on("keydown", function (event) {
+    $(SearchInput).on("keydown", function (event) {
         if (event.which == 13) {
 
-            if (selectedHintIdx != -1) {
-                $(SearchDropdownItemsSelector).eq(selectedHintIdx).click();
-            }
+            if (loadedHintsNum == 1)
+                $(SearchDropdownItems).eq(0).click();
 
-            if (selectableHints == 1) {
-                $(SearchDropdownItemsSelector).eq(0).click();
-            }
+            if (selectedHintIdx != -1)
+                $(SearchDropdownItems).eq(selectedHintIdx).click();
 
-            $(SearchFormSelector).submit();
+            if ($(SearchInput).val().length > 0)
+                $(SearchForm).submit();
+            
             return false;
         }
 
-        if (selectableHints > 0) {
+        if (loadedHintsNum > 0) {
             if (event.which == 40) {
                 event.preventDefault();
 
-                if (selectedHintIdx + 1 < selectableHints) {
+                if (selectedHintIdx + 1 < loadedHintsNum)
                     selectedHintIdx += 1;
-                } else {
+                else
                     selectedHintIdx = 0;
-                }
+
             } else if (event.which == 38) {
                 event.preventDefault();
 
-                if (selectedHintIdx - 1 >= 0) {
+                if (selectedHintIdx - 1 >= 0)
                     selectedHintIdx -= 1;
-                } else {
-                    selectedHintIdx = selectableHints - 1;
-                }
+                else
+                    selectedHintIdx = loadedHintsNum - 1;
             }
 
-            $(SearchDropdownItemsSelector).removeClass(hintsSelectionClass);
-            $(SearchDropdownItemsSelector).eq(selectedHintIdx).addClass(hintsSelectionClass);
+            $(SearchDropdownItems).removeClass(hintsSelectionClass);
+            $(SearchDropdownItems).eq(selectedHintIdx).addClass(hintsSelectionClass);
 
         } else {
             selectedHintIdx = -1;
@@ -83,16 +87,13 @@ $(document).ready(function () {
 
     });
 
-    $(SearchInputSelector).on("input", function (event) {
-        var inputText = $(SearchInputSelector).val();
+    $(SearchInput).on("input", function (event) {
+        $(SearchDropdown).show();
 
-
-        $(SearchDropdownSelector).show();
-
-        if (inputText.length < 2) {
-            selectableHints = 0;
-            $(SearchDropdownListSelector).empty();
-            $(SearchDropdownHintSelector).show();
+        if ($(SearchInput).val().length < 2) {
+            loadedHintsNum = 0;
+            $(SearchDropdownList).empty();
+            $(SearchDropdownHint).show();
             return;
         }
 
@@ -101,10 +102,10 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "FrontPage.aspx/GetMunicipalitiesByInput",
+                url: requestAddress,
                 data: JSON.stringify({
-                    inputValue: $(SearchInputSelector).val(),
-                    maxNum: maxHints
+                    inputValue: $(SearchInput).val(),
+                    maxNum: requestMaxHints
                 }),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
@@ -112,23 +113,22 @@ $(document).ready(function () {
                     if (res.d == null)
                         return;
 
-                    $(SearchDropdownHintSelector).hide();
-                    $(SearchDropdownListSelector).empty();
+                    $(SearchDropdownHint).hide();
+                    $(SearchDropdownList).empty();
 
-                    selectableHints = 0;
+                    loadedHintsNum = 0;
 
                     $.each(res.d, function () {
-                        selectableHints += 1;
+                        loadedHintsNum += 1;
 
-                        $(SearchDropdownListSelector).append(
+                        $(SearchDropdownList).append(
                             '<li data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
 
-                        if (this.Name.toLowerCase() == $(SearchInputSelector).val().toLowerCase()) {
-                            $(SearchDropdownSelector).hide();
-                        } else {
-                            $(SearchDropdownSelector).show();
-                        }
+                        if (this.Name.toLowerCase() == $(SearchInput).val().toLowerCase())
+                            $(SearchDropdown).hide();
+                        else
+                            $(SearchDropdown).show();
                     });
 
                 },
