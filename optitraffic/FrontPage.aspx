@@ -20,8 +20,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.0/src/js.cookie.min.js"></script>
 
+    <script src="assets/LanguageSelection.js"></script>
     <script src="assets/SearchDropdown.js"></script>
-    <script src="assets/SetCookies.js"></script>
 
     <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>

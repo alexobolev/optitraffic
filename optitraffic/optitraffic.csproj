@@ -72,7 +72,7 @@
   <ItemGroup>
     <Content Include="assets\css\main.css" />
     <Content Include="assets\SearchDropdown.js" />
-    <Content Include="assets\SetCookies.js" />
+    <Content Include="assets\LanguageSelection.js" />
     <Content Include="FrontPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Oops404.aspx" />
