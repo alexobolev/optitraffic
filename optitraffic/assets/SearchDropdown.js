@@ -17,21 +17,25 @@ $(document).ready(function () {
 
     var SearchForm = "#SearchForm";
     var SearchInput = "#LocationName";
+    var SearchSumbitBtn = "#SubmitBtn";
     var SearchDropdown = "#searchOptions";
     var SearchDropdownList = SearchDropdown + ">ul";
     var SearchDropdownItems = SearchDropdownList + ">li";
     var SearchDropdownHint = "#searchOptionsHint";
 
+    var selectedSearchDropdownItem = false;
+
 
 
     $(document).on("click", function (event) {
         if (elementHasAttribute($(event.target), hintsAttrName)) {
-
+            selectedSearchDropdownItem = true;
             $(SearchInput).val($(event.target).attr(hintsAttrName));
             $(SearchDropdown).hide();
-
         } else if ($(event.target).attr("id") != $(SearchInput).attr("id")) {
             $(SearchDropdown).hide();
+        } else {
+            selectedSearchDropdownItem = false;
         }
     });
 
@@ -41,7 +45,7 @@ $(document).ready(function () {
     });
 
     $(SearchForm).on("focusin", function (event) {
-        if ($(SearchInput).val().length > 0)
+        if ($(SearchInput).val().length > 0 && !selectedSearchDropdownItem)
             $(SearchDropdown).show();
     });
 
@@ -88,6 +92,7 @@ $(document).ready(function () {
     });
 
     $(SearchInput).on("input", function (event) {
+        selectedSearchDropdownItem = false;
         $(SearchDropdown).show();
 
         if ($(SearchInput).val().length < 2) {
@@ -125,10 +130,12 @@ $(document).ready(function () {
                             '<li data-name="' + this.Name + '">' + this.Name + '</li>'
                         );
 
-                        if (this.Name.toLowerCase() == $(SearchInput).val().toLowerCase())
+                        if (this.Name.toLowerCase() == $(SearchInput).val().toLowerCase()) {
+                            selectedSearchDropdownItem = true;
                             $(SearchDropdown).hide();
-                        else
+                        } else {
                             $(SearchDropdown).show();
+                        }
                     });
 
                 },
