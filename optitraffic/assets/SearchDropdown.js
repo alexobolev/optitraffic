@@ -38,6 +38,10 @@ $(document).ready(function () {
                 $("#searchOptions>ul>li").eq(selectedHintIdx).click();
             }
 
+            if (selectableHints == 1) {
+                $("#searchOptions>ul>li").eq(0).click();
+            }
+
             $("#SearchForm").submit();
             return false;
         }
