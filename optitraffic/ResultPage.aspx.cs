@@ -29,7 +29,7 @@ namespace optitraffic
             base.Page_Load(sender, e);
             this.ParseRequestData();
 
-            this.LocalStations = ((List<TmsStation>)HttpContext.Current.Application["TmsStations"])
+            this.LocalStations = ((List<TmsStation>)HttpContext.Current.Session["TmsStations"])
                                     .Where(o => o.MunicipalityCode == this.Subject.Code && o.MunicipalityCode != -1)
                                     .ToList();
 
@@ -59,7 +59,7 @@ namespace optitraffic
                 if (null == locName)
                     throw new Exception();
 
-                this.Subject = ((List<Municipality>)HttpContext.Current.Application["Municipalities"])
+                this.Subject = ((List<Municipality>)HttpContext.Current.Session["Municipalities"])
                                     .Where(o => o.Name.ToLower() == locName.ToLower())
                                     .ToList()
                                     .Single();

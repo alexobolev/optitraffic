@@ -33,7 +33,7 @@ namespace optitraffic
 
             try
             {
-                return ((List<Municipality>)HttpContext.Current.Application["Municipalities"])
+                return ((List<Municipality>)HttpContext.Current.Session["Municipalities"])
                     .Where(o => o.Name.ToLower().StartsWith(inputValue))
                     .ToList()
                     .Take(maxNum)

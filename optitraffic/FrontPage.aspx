@@ -71,7 +71,7 @@
                                 </ul>
                                 <div class="search-results-hint" id="searchOptionsHint">
                                     <span>
-                                        <% if (!(bool)Application["InitialLoadFailed"])
+                                        <% if (!(bool)Session["InitialLoadFailed"])
                                            { %>
                                         <%= LocaleRes.GetString("SearchHintMinLength") %>
                                         <% } else {%> 

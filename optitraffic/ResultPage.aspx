@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResultPage.aspx.cs" Inherits="optitraffic.ResultPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableSessionState="ReadOnly" CodeBehind="ResultPage.aspx.cs" Inherits="optitraffic.ResultPage" %>
 
 <!DOCTYPE html>
 

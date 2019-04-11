@@ -14,21 +14,6 @@ namespace optitraffic
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            List<TmsStation> tmsStations = new List<TmsStation>();
-            List<Municipality> municipalities = new List<Municipality>();
-
-            if (!DataRetriever.GetStationsAndMunicipalities(ref tmsStations, ref municipalities))
-            {
-                Application["InitialLoadFailed"] = true;
-                Application["TmsStations"] = null;
-                Application["Municipalities"] = null;
-            } else
-            {
-                Application["InitialLoadFailed"] = false;
-                Application["TmsStations"] = tmsStations;
-                Application["Municipalities"] = municipalities;
-            }
-
             try
             {
                 List<String> localesAvailable = Assembly
@@ -43,6 +28,33 @@ namespace optitraffic
             } catch
             {
                 Application["Locales"] = null;
+            }
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            try
+            {
+                List<TmsStation> tmsStations = new List<TmsStation>();
+                List<Municipality> municipalities = new List<Municipality>();
+
+                if (!DataRetriever.GetStationsAndMunicipalities(ref tmsStations, ref municipalities))
+                {
+                    Session["InitialLoadFailed"] = true;
+                    Session["TmsStations"] = null;
+                    Session["Municipalities"] = null;
+                }
+                else
+                {
+                    Session["InitialLoadFailed"] = false;
+                    Session["TmsStations"] = tmsStations;
+                    Session["Municipalities"] = municipalities;
+                }
+            } catch
+            {
+                Session["InitialLoadFailed"] = true;
+                Session["TmsStations"] = null;
+                Session["Municipalities"] = null;
             }
         }
 
