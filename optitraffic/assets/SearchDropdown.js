@@ -24,9 +24,6 @@ $(document).ready(function () {
         }
     });
 
-    //$("#SearchForm").on("focusout", function (event) {
-    //    $("#searchOptions").hide();
-    //});
 
     var selectedHintIdx = -1;
     var selectableHints = 0;
@@ -86,8 +83,6 @@ $(document).ready(function () {
             $("#searchOptionsHint").show();
             return;
         }
-
-        //$("#searchOptions>ul").empty();
 
         setTimeout(function () {
             event.stopImmediatePropagation();
