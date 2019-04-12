@@ -83,7 +83,8 @@ $(document).ready(function () {
             }
 
             $(SearchDropdownItems).removeClass(hintsSelectionClass);
-            $(SearchDropdownItems).eq(selectedHintIdx).addClass(hintsSelectionClass);
+            if (selectedHintIdx != -1)
+                $(SearchDropdownItems).eq(selectedHintIdx).addClass(hintsSelectionClass);
 
         } else {
             selectedHintIdx = -1;
@@ -147,5 +148,8 @@ $(document).ready(function () {
                 }
             });
         }, requestDelay);
+
+        selectedHintIdx = -1;
+        loadedHintsNum = 0;
     });
 });
