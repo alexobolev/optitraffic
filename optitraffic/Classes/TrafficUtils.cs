@@ -7,10 +7,10 @@ namespace optitraffic.Classes
 {
     public static class TrafficUtils
     {
-        public const double NoTrafficThreshold = 0.07;
-        public const double LowTrafficThreshold = 0.2;
+        public const double NoTrafficThreshold = 0.1;
+        public const double LowTrafficThreshold = 0.225;
         public const double MediumTrafficThreshold = 0.45;
-        public const double HighTrafficThreshold = 0.85;
+        public const double HighTrafficThreshold = 0.65;
 
 
         public static TrafficLevel DoubleToLevel(double val)
@@ -34,7 +34,7 @@ namespace optitraffic.Classes
                 if (freeFlowSpeed == 0.0)
                     throw new Exception();
 
-                double lvl = (freeFlowSpeed * 1.1 / (freeFlowSpeed)) - ((avgSpeed - 5) / freeFlowSpeed);
+                double lvl = (freeFlowSpeed * 1.2 / (freeFlowSpeed)) - ((avgSpeed - 5) / freeFlowSpeed);
 
                 if (lvl < 0)
                     lvl = 0.0;
